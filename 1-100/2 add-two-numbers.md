@@ -38,8 +38,8 @@ Example:
 ### 3.1 carry不作为循环条件
 
 ```java
-public ListNode addTwoNumbers02(ListNode l1, ListNode l2) {
-ListNode start = new ListNode(0);
+    public ListNode addTwoNumbers02(ListNode l1, ListNode l2) {
+        ListNode start = new ListNode(0);
         ListNode pre = start;
         int carry = 0;
         while(l1!=null||l2!=null||carry != 0) {
@@ -60,8 +60,6 @@ ListNode start = new ListNode(0);
         return start.next;
         }
 ```
-
-
 
 ### 3.2 carry也作为循环条件
 
