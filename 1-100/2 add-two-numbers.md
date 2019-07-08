@@ -38,7 +38,7 @@ Example:
 ### 3.1 carry不作为循环条件
 
 ```java
-    public ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode start = new ListNode(0);
         ListNode pre = start;
         int carry = 0;
@@ -67,7 +67,7 @@ Example:
 ### 3.2 carry也作为循环条件
 
 ```java
-    public ListNode addTwoNumbers02(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode start = new ListNode(0);
         ListNode pre = start;
         int carry = 0;
