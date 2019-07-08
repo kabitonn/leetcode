@@ -39,23 +39,23 @@ Example:
 
 ```java
     public int[] twoSum1(int[] nums, int target) {
-		Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for(int i=0;i<nums.length;i++) {
-        	map.put(nums[i], i);
+            map.put(nums[i], i);
         }
         for(int i=0;i<nums.length;i++) {
-        	int complement = target - nums[i];
+            int complement = target - nums[i];
             if (map.containsKey(complement) && map.get(complement) != i) {
                 return new int[] { i, map.get(complement) };
             }
         }
-		return null;
+        return null;
     }
 ```
 
 ### 2.3 一遍哈希
 
-
+一次遍历过程中
 
 
 
