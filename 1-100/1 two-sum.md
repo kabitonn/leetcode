@@ -40,7 +40,7 @@ Example:
 第一遍遍历将所有值作为key，索引作为value存入map，第二遍遍历判断当前值与目标target之间的差值是否存在，并且该值不为当前元素\(每个值只能用一次\)，若找到即可返回\(因为唯一存在\)。
 
 ```java
-    public int[] twoSum1(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for(int i=0;i<nums.length;i++) {
             map.put(nums[i], i);
@@ -62,7 +62,7 @@ Example:
 一次遍历过程中，若当前元素与目标target之间的差值存在\(不需判断为当前元素，因为当前元素还未放入map\)，即可返回\(唯一存在\)，若不存在，将当前元素值和索引作为key、value存入map;
 
 ```java
-    public int[] twoSum2(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for(int i=0;i<nums.length;i++) {
             int complement = target - nums[i];
