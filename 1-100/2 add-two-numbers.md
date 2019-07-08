@@ -38,28 +38,33 @@ Example:
 ### 3.1 carry不作为循环条件
 
 ```java
-    public ListNode addTwoNumbers02(ListNode l1, ListNode l2) {
-        ListNode start = new ListNode(0);
-        ListNode pre = start;
-        int carry = 0;
-        while(l1!=null||l2!=null||carry != 0) {
-            ListNode last = new ListNode(carry);
-            if(l1!=null) {
-                last.val += l1.val;
-                l1 = l1.next;
-            }
-            if(l2!=null) {
-                last.val += l2.val;
-                l2 = l2.next;
-            }
-            carry = last.val/10;
-            last.val%=10;
-            pre.next = last;
-            pre = last;
-        }
-        return start.next;
-    }
+public ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
+		ListNode start = new ListNode(0);
+		ListNode pre = start;
+		int carry = 0;
+		int x,y,sum;
+		while(l1!=null||l2!=null) {
+			x=l1!=null?l1.val:0;
+			y=l2!=null?l2.val:0;
+			sum = x+y+carry;
+			carry = sum / 10;
+			pre.next = new ListNode(sum%10);
+			if(l1!=null) {
+				l1 = l1.next;
+			}
+			if(l2!=null) {
+				l2 = l2.next;
+			}
+			pre = pre.next;
+		}
+		if(carry!=0) {
+			pre.next = new ListNode(carry);
+		}
+		return start.next;
+	}
 ```
+
+
 
 ### 3.2 carry也作为循环条件
 
