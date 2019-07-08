@@ -35,21 +35,27 @@ Example:
 
 ### 2.2 两遍哈希
 
-第一遍将所有值作为key，索引作为value存入，第二遍判断与目标target之间的差值是否存在，若找到即可返回\(因为唯一存在\)。
+第一遍遍历将所有值作为key，索引作为value存入，第二遍遍历判断当前值与目标target之间的差值是否存在，并且该值不为当前元素\(每个值只能用一次\)，若找到即可返回\(因为唯一存在\)。
 
 ```java
-    public int[] twoSum2(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
+    public int[] twoSum1(int[] nums, int target) {
+		Map<Integer, Integer> map = new HashMap<>();
         for(int i=0;i<nums.length;i++) {
-        int complement = target - nums[i];
+        	map.put(nums[i], i);
+        }
+        for(int i=0;i<nums.length;i++) {
+        	int complement = target - nums[i];
             if (map.containsKey(complement) && map.get(complement) != i) {
                 return new int[] { i, map.get(complement) };
             }
-            map.put(nums[i], i);
         }
-        return null;
+		return null;
     }
 ```
+
+### 2.3 一遍哈希
+
+
 
 
 
