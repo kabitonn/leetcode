@@ -58,10 +58,8 @@ Example:
             pre = last;
         }
         return start.next;
-        }
+    }
 ```
-
-
 
 ### 3.2 carry也作为循环条件
 
