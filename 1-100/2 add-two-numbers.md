@@ -14,15 +14,56 @@ Example:
 >
 > Explanation: 342 + 465 = 807.
 
-## 
+## 2. 思路
 
-## 2. 解决方法
+两数相加从有效低位开始相加，低位即两链表_l1_和_l2_的头部，两位数字相加出现进位_carry_，
 
-### 2.1 
+伪代码如下
 
-### 2.2
+* 初始化一个节点的头，哑节点start ，但是这个头不存储数字。并且将 curr 指向它。
+* 初始化进位 carry 为 0 。
+* 初始化 p 和 q 分别为给定的两个链表 l1 和 l2 的头，也就是个位。
+* 循环，直到 l1 和 l2 全部到达 null 。
+  * 设置 x 为 p 节点的值，如果 p 已经到达了 null，设置 x 为 0 。
+  * 设置 y 为 q 节点的值，如果 q 已经到达了 null，设置 y 为 0 。
+  * 设置 sum = x + y + carry 。
+  * 更新 carry = sum / 10 。
+  * 创建一个值为 sum mod 10 的节点，并将 curr 的 next 指向它，同时 curr 指向变为当前的新节点。
+  * 向前移动 p 和 q 。
+* 判断 carry 是否等于 1 ，如果等于 1 ，在链表末尾增加一个为 1 的节点。
+* 返回 start 的 next ，也就是个位数开始的地方。
 
-### 2.3
+## 3. 解决方法
+
+### 3.1 carry不作为循环条件
+
+```java
+ListNode start = new ListNode(0);
+		ListNode pre = start;
+		int carry = 0;
+		while(l1!=null||l2!=null||carry != 0) {
+			ListNode last = new ListNode(carry);
+			if(l1!=null) {
+				last.val += l1.val;
+				l1 = l1.next;
+			}
+			if(l2!=null) {
+				last.val += l2.val;
+				l2 = l2.next;
+			}
+			carry = last.val/10;
+			last.val%=10;
+			pre.next = last;
+			pre = last;
+		}
+		return start.next;
+```
+
+
+
+### 3.2 carry也作为循环条件
+
+
 
 
 
