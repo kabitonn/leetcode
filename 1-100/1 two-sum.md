@@ -1,6 +1,10 @@
-001. Two Sum
 
-## 1. 题目描述（简单）
+
+
+
+fd$$x = y$$
+
+Two Sum1. 题目描述（简单）
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
