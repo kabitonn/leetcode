@@ -57,20 +57,19 @@ Example:
 
 一次遍历过程中，若当前元素与目标target之间的差值存在且该值不为当前元素，即可返回\(唯一存在\)，若不存在，将当前元素值和索引作为key、value存入map;
 
-```
-public int[] twoSum2(int[] nums, int target) {
-		Map<Integer, Integer> map = new HashMap<>();
-		for(int i=0;i<nums.length;i++) {
-        	int complement = target - nums[i];
+```java
+    public int[] twoSum2(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i=0;i<nums.length;i++) {
+            int complement = target - nums[i];
             if (map.containsKey(complement) && map.get(complement) != i) {
                 return new int[] { i, map.get(complement) };
             }
             map.put(nums[i], i);
         }
-		
-		return null;
-	}
-	
+
+        return null;
+    }
 ```
 
 
