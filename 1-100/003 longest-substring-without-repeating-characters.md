@@ -1,6 +1,6 @@
 #### [3. Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
-## 1. 题目描述\(中等\)
+## 1. 题目描述(中等)
 
 Given a string, find the length of the longest substring without repeating characters.
 
