@@ -1,6 +1,6 @@
 #### [3. Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
-## 1. 题目描述(中等)
+## 1. 题目描述\(中等\)
 
 Given a string, find the length of the longest substring without repeating characters.
 
@@ -61,6 +61,8 @@ Example 3:
     }
 ```
 
+时间复杂度O\($$n^3$$\)
+
 ```java
     public int lengthOfLongestSubstring(String s) {
         int maxNum = 0;
@@ -82,7 +84,13 @@ Example 3:
         }
 ```
 
-### 3.2 双指针(滑动窗口)
+时间复杂度O\($$n^2$$\)
+
+空间复杂度O\(min\(n,m\)\),需要 O\(k\)O\(k\) 的空间来检查子字符串中是否有重复字符，其中 kk 表示 Set 的大小。而 Set 的大小取决于字符串 nn 的大小以及字符集/字母 mm 的大小。
+
+### 3.2 双指针\(滑动窗口\)
+
+
 
 ### 3.3 优化滑动窗口
 
