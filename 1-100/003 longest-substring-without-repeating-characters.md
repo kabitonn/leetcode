@@ -155,7 +155,7 @@ $$j$$，如果它不在 HashSet 中，我们会继续滑动 jj。直到 $$s[j]$$
 采用数组模拟map，适用于字符集较小情况。
 
 ```java
-public int lengthOfLongestSubstring5(String s) {
+    public int lengthOfLongestSubstring5(String s) {
         int n = s.length(), maxNum = 0;
         int[] map = new int[128];
         for (int j = 0, i = 0; j < n; j++) {
@@ -166,8 +166,6 @@ public int lengthOfLongestSubstring5(String s) {
         return maxNum;
     }
 ```
-
-
 
 
 
