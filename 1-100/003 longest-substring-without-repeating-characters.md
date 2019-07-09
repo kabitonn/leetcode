@@ -80,10 +80,9 @@ Example 3:
             maxNum = Math.max(maxNum,set.size());
             set.clear();
         }
-
 ```
 
-### 3.2 双指针\(滑动窗口\)
+### 3.2 双指针(滑动窗口)
 
 ### 3.3 优化滑动窗口
 
