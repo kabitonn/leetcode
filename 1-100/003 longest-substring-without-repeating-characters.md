@@ -86,9 +86,28 @@ Example 3:
 
 时间复杂度O\($$n^2$$\)
 
-空间复杂度O\(min\(n,m\)\),需要 O\(k\)O\(k\) 的空间来检查子字符串中是否有重复字符，其中 kk 表示 Set 的大小。而 Set 的大小取决于字符串 nn 的大小以及字符集/字母 mm 的大小。
+空间复杂度O\(min\(n,m\)\),需要 O\(k\) 的空间来检查子字符串中是否有重复字符，其中 k 表示 Set 的大小。而 Set 的大小取决于字符串n 的大小以及字符集/字母m的大小。
 
 ### 3.2 双指针\(滑动窗口\)
+
+```
+	public int lengthOfLongestSubstring03(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int maxNum = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            // try to extend the range [i, j]
+            if (!set.contains(s.charAt(j))){
+                set.add(s.charAt(j++));
+                maxNum = Math.max(maxNum, j - i);
+            }
+            else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return maxNum;
+    }
+```
 
 
 
