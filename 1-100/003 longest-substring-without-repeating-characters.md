@@ -90,8 +90,8 @@ Example 3:
 
 ### 3.2 双指针\(滑动窗口\)
 
-```
-	public int lengthOfLongestSubstring03(String s) {
+```java
+    public int lengthOfLongestSubstring03(String s) {
         int n = s.length();
         Set<Character> set = new HashSet<>();
         int maxNum = 0, i = 0, j = 0;
