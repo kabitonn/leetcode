@@ -62,31 +62,31 @@ Example 2:
 ### 3.2 暴力法-归并部分数组
 
 ```java
-public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-		int m=nums1.length;
-		int n=nums2.length;
-		int pre=0,cur=0;
-		int i=0,j=0;
-		
-		int mid = (m+n)/2;
-		boolean isEven = (m+n)%2==0?true:false;
-		for(int k=0;k<=mid;k++) {
-			pre = cur;
-			if(i<m&&(j>=n||nums1[i]<nums2[j])) {
-				cur = nums1[i++];
-			}
-			else if(j<n&&(i>=m)||nums1[i]>=nums2[j]) {
-				cur = nums2[j++];
-			}
-		}
-		if(isEven) {
-			return (pre+cur)/2.0;
-		}
-		else {
-			return cur;
-		}
-		
-	}
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m=nums1.length;
+        int n=nums2.length;
+        int pre=0,cur=0;
+        int i=0,j=0;
+
+        int mid = (m+n)/2;
+        boolean isEven = (m+n)%2==0?true:false;
+        for(int k=0;k<=mid;k++) {
+            pre = cur;
+            if(i<m&&(j>=n||nums1[i]<nums2[j])) {
+                cur = nums1[i++];
+            }
+            else if(j<n&&(i>=m)||nums1[i]>=nums2[j]) {
+                cur = nums2[j++];
+            }
+        }
+        if(isEven) {
+            return (pre+cur)/2.0;
+        }
+        else {
+            return cur;
+        }
+
+    }
 ```
 
 
