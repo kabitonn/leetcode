@@ -130,7 +130,7 @@ Example 3:
 也就是说，如果 $$s[j]$$ 在 $$[i,j)$$ 范围内有与 $$j'$$重复的字符，我们不需要逐渐增加 $$i$$ 。 我们可以直接跳过$$ [i,j']$$ 范围内的所有元素，并将 $$i$$ 变为 $$j' + 1$$
 
 ```java
-	public int lengthOfLongestSubstring4(String s) {
+    public int lengthOfLongestSubstring4(String s) {
         int n = s.length();
         int maxNum = 0;
         Map<Character, Integer> map = new HashMap<>();
