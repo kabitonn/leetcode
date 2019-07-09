@@ -85,7 +85,6 @@ Example 3:
 ```
 
 时间复杂度O\($$n^2$$\)
-
 空间复杂度O\(min\(n,m\)\),需要 O\(k\) 的空间来检查子字符串中是否有重复字符，其中 k 表示 Set 的大小。而 Set 的大小取决于字符串n 的大小以及字符集/字母m的大小。
 
 ### 3.2 双指针\(滑动窗口\)
@@ -119,7 +118,6 @@ Example 3:
     }
 ```
 时间复杂度：$$O(2n) = O(n)$$，在最糟糕的情况下，每个字符将被$$i$$和$$j$$访问两次。
-
 空间复杂度：$$O(min(m, n))$$，与之前的方法相同。滑动窗口法需要 $$O(k)$$的空间，其中$$k$$ 表示 Set 的大小。而 Set 的大小取决于字符串 $$n$$的大小以及字符集 / 字母$$m$$的大小。
 
 
@@ -146,13 +144,28 @@ Example 3:
         return maxNum;
     }
 ```
-与上述解法相比，由于采取了 i 跳跃的形式，所以 map 之前存的字符没有进行 remove ，所以 if 语句中进行了Math.max ( map.get ( s.charAt ( j ) ) , i )，要确认得到的下标不是 i 前边的。
-时间复杂度：我们将 2n 优化到了 n ，但最终还是和之前一样，$$O(n)$$。
+与上述解法相比，由于采取了 i 跳跃的形式，所以 map 之前存的字符没有进行 remove ，所以 if 语句中进行了Math.max ( map.get (c), i )，要确认得到的下标不是 i 前边的。
+在每次循环中都进行更新，因为 maxNum 更新前 i 都进行了更新，已经保证了当前的子串符合条件，所以可以更新 maxNum 。而解法二中，只有当当前的子串不包含当前的字符时，才进行更新。
 
+时间复杂度：我们将 2n 优化到了 n ，但最终还是和之前一样，$$O(n)$$。
 空间复杂度：也是一样的，$$O(min(m，n))$$。
 
+### 3.4 优化滑动窗口改
 
+采用数组模拟map，适用于字符集较小情况。
 
+```java
+public int lengthOfLongestSubstring5(String s) {
+		int n = s.length(), maxNum = 0;
+		int[] map = new int[128];
+		for (int j = 0, i = 0; j < n; j++) {
+			i = Math.max(map[s.charAt(j)], i);
+			maxNum = Math.max(maxNum, j - i + 1);
+			map[s.charAt(j)] = j + 1;	//i=j'+1
+		}
+		return maxNum;
+	}
+```
 
 
 
