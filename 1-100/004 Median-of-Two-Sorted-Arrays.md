@@ -33,33 +33,31 @@ Example 2:
 归并两个有序数组，返回中位数
 
 ```java
-	public double findMedianSortedArrays1(int[] nums1, int[] nums2) {
-		int m=nums1.length;
-		int n=nums2.length;
-		int i=0,j=0;
-		int mid = (m+n)/2;
-		int[] nums = new int[m+n];
-		int k=0;
-		
-		boolean isEven = (m+n)%2==0?true:false;
-		while((k<=mid)&&(i<m||j<n)) {
-			while(i<m&&(j>=n||nums1[i]<nums2[j])) {
-				nums[k++] = nums1[i++];
-			}
-			while(j<n&&(i>=m||nums1[i]>=nums2[j])) {
-				nums[k++] = nums2[j++];
-			}
-		}
-		if(isEven) {
-			return (nums[mid-1]+nums[mid])/2.0;
-		}
-		else {
-			return nums[mid];
-		}
-	}
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m=nums1.length;
+        int n=nums2.length;
+        int i=0,j=0;
+        int mid = (m+n)/2;
+        int[] nums = new int[m+n];
+        int k=0;
+
+        boolean isEven = (m+n)%2==0?true:false;
+        while((k<=mid)&&(i<m||j<n)) {
+            while(i<m&&(j>=n||nums1[i]<nums2[j])) {
+                nums[k++] = nums1[i++];
+            }
+            while(j<n&&(i>=m||nums1[i]>=nums2[j])) {
+                nums[k++] = nums2[j++];
+            }
+        }
+        if(isEven) {
+            return (nums[mid-1]+nums[mid])/2.0;
+        }
+        else {
+            return nums[mid];
+        }
+    }
 ```
-
-
 
 
 
