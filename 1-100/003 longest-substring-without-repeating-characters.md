@@ -80,15 +80,8 @@ Example 3:
             maxNum = Math.max(maxNum,set.size());
             set.clear();
         }
-        return maxNum;
-    }
+
 ```
-
-时间复杂度O\($$n^3$$\)
-
-
-
-时间复杂度O\($$n^3$$\)
 
 ### 3.2 双指针\(滑动窗口\)
 
