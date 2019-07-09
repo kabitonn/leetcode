@@ -121,8 +121,9 @@ Example 2:
     A[0], A[1], ..., A[i-1]  |  A[i], A[i+1], ..., A[m-1]
     B[0], B[1], ..., B[j-1]  |  B[j], B[j+1], ..., B[n-1]
 如果我们可以确认：
-    1. $$len(left_part) = len(right_part)$$
-    2. $$max(left_part) <= min(right_part)$$
+    1. $$len(leftpart) = len(rightpart)$$
+    2. $$max(leftpart) <= min(rightpart)$$
+    
 
 ```java
     public double findMedianSortedArrays(int[] A, int[] B) {
