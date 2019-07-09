@@ -122,7 +122,7 @@ Example 2:
     B[0], B[1], ..., B[j-1]  |  B[j], B[j+1], ..., B[n-1]
 如果我们可以确认：
     1. $$len(leftpart) = len(rightpart)$$
-    2. $$max(leftpart) <= min(rightpart)$$
+    2. $$max(leftpart) < = min(rightpart)$$
     
 
 ```java
