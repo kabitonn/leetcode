@@ -140,15 +140,16 @@ Example 3:
         		i = Math.max(map.get(c),i);
         	}
         	maxNum = Math.max(maxNum, j-i+1);
-        	map.put(c, j+1);
+        	map.put(c, j+1);    //i=j'+1
         }
         
         return maxNum;
     }
 ```
-时间复杂度：我们将 2n 优化到了 n ，但最终还是和之前一样，O（n）。
+与上述解法相比，由于采取了 i 跳跃的形式，所以 map 之前存的字符没有进行 remove ，所以 if 语句中进行了Math.max ( map.get ( s.charAt ( j ) ) , i )，要确认得到的下标不是 i 前边的。
+时间复杂度：我们将 2n 优化到了 n ，但最终还是和之前一样，$$O(n)$$。
 
-空间复杂度：也是一样的，O（min（m，n)）。
+空间复杂度：也是一样的，$$O(min(m，n))$$。
 
 
 
