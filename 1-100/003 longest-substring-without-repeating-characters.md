@@ -62,29 +62,27 @@ Example 3:
 ```
 
 ```java
-public int lengthOfLongestSubstring(String s) {
-		int maxNum = 0;
-		Set<Character> set = new HashSet<>();
-		char[] str = s.toCharArray();
-		int n = str.length;
-		for(int i=0;i<n;i++) {
-			set.add(str[i]);
-			for(int j=i+1;j<n;j++) {
-				if(!set.contains(str[j])) {
-					set.add(str[j]);
-				}
-				else {
-					break;
-				}
-			}
-			maxNum = Math.max(maxNum,set.size());
-			set.clear();
-		}
-		return maxNum;
+    public int lengthOfLongestSubstring(String s) {
+        int maxNum = 0;
+        Set<Character> set = new HashSet<>();
+        char[] str = s.toCharArray();
+        int n = str.length;
+        for(int i=0;i<n;i++) {
+            set.add(str[i]);
+            for(int j=i+1;j<n;j++) {
+                if(!set.contains(str[j])) {
+                    set.add(str[j]);
+                }
+                else {
+                    break;
+                }
             }
+            maxNum = Math.max(maxNum,set.size());
+            set.clear();
+        }
+        return maxNum;
+    }
 ```
-
-
 
 ### 3.2 双指针\(滑动窗口\)
 
