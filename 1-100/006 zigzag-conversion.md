@@ -70,3 +70,29 @@ P     I
 
 空间复杂度：$$O(n)$$，保存每个字符需要的空间。
 
+### 3.2 Z字形规律
+
+找出按 Z 形排列后字符的规律，然后直接保存起来。
+
+
+```java
+    public String convert1(String s, int numRows) {
+    	if(numRows==1)
+    		return s;
+    	int len = s.length();
+    	int cycle = 2*numRows-2;
+    	StringBuilder stringBuilder = new StringBuilder();
+    	for(int i=0;i<numRows;i++) {
+    		for(int j=0;j+i<len;j+=cycle) {
+    			stringBuilder.append(s.charAt(j+i));
+    			if(i!=0&&i!=numRows-1&&j+cycle-i<len) {
+    				stringBuilder.append(s.charAt(j+cycle-i));
+    			}
+    		}
+    	}
+    	return stringBuilder.toString();
+    }
+
+```
+
+
