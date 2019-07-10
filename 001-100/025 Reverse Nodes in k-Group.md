@@ -125,17 +125,17 @@
         return start.next;
     }
     public ListNode reverse(ListNode head) {
-ListNode cur = head;
-ListNode newHead = null;
-ListNode next;
-while(cur!=null) {
-next = cur.next;
-cur.next = newHead;
-newHead = cur;
-cur = next;
-}
-return newHead;
-}
+    	ListNode cur = head;
+    	ListNode newHead = null;
+    	ListNode next;
+    	while(cur!=null) {
+    		next = cur.next;
+    		cur.next = newHead;
+    		newHead = cur;
+    		cur = next;
+    	}
+    	return newHead;
+    }
 ```
 
 
