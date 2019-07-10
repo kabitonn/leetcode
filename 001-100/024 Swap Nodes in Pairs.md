@@ -14,8 +14,49 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 迭代
 
 
-### 3.1
+
+```java
+    public ListNode swapPairs(ListNode head) {
+    	if(head==null||head.next==null)
+    		return head;
+    	ListNode start = new ListNode(0);
+        ListNode cur=start;
+        cur.next = head;
+        ListNode first = cur.next;
+        ListNode second = first.next;
+        while(first!=null&&second!=null) {
+        	first.next = second.next;
+        	second.next = first;
+        	cur.next = second;
+        	cur = first;
+        	first = first.next;
+        	if(first!=null) {
+        		second = first.next;
+        	}
+        }
+        
+        return start.next;
+    }
+```
+
+
+
+### 3.2 递归
+
+
+
+```java
+    public ListNode swapPairs1(ListNode head) {
+    	if(head==null||head.next==null)
+    		return head;
+    	ListNode next = head.next;
+    	head.next = swapPairs1(next.next);
+    	next.next= head;
+        return next;
+    }
+```
+
 
