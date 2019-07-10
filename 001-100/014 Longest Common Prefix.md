@@ -24,5 +24,32 @@ Explanation: There is no common prefix among the input strings.
 
 ## 3. 解决方法
 
+### 3.1 垂直比较
+
+
+
+```java
+    public String longestCommonPrefix(String[] strs) {
+    	if(strs == null ||strs.length == 0)
+    		return "";
+    	int min = Integer.MAX_VALUE;
+    	for (String str : strs)
+    		min = Math.min(min, str.length());
+        char c;
+        int i=0;
+        for(;i<min;i++) {
+        	c = strs[0].charAt(i);
+        	for(int j=1;j<strs.length;j++) {
+        		if(strs[j].charAt(i)!=c) {
+        			return strs[0].substring(0, i);
+        		}
+        	}
+        }
+        return strs[0].substring(0, i);
+    }
+```
+
+
+
 
 
