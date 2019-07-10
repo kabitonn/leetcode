@@ -42,7 +42,37 @@ Output: 49
 
 ```
 
-### 3.2 双指针
+### 3.2 暴力法改进
+
+
+
+```java
+    public int maxArea(int[] height) {
+    	int maxArea =0;
+    	int area;
+    	int max;
+    	for(int i=0;i<height.length-1;i++) {
+    		area = (height.length-1-i)*Math.min(height[i], height[height.length-1]);
+			if(area>maxArea) {
+				maxArea = area;
+			}
+			max = height[height.length-1];
+    		for(int j=height.length-1;j>i;j--) {
+    			if(height[j]<=max)
+    				continue;
+    			max = height[j];
+    			area = (j-i)*Math.min(height[i], height[j]);
+    			if(area>maxArea) {
+    				maxArea = area;
+    			}
+    		}
+    	}
+        return maxArea;
+    }
+
+```
+
+### 3.3 双指针
 
 
 
