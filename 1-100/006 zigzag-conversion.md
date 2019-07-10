@@ -42,31 +42,31 @@ P     I
 
 ```java
     public String convert(String s, int numRows) {
-    	if(numRows==1)
-    		return s;
-    	int len = s.length();
-    	StringBuilder[] rows = new StringBuilder[numRows];
-    	for(int i=0;i<numRows;i++) {
-    		rows[i] = new StringBuilder();
-    	}
-    	int asc = -1;
-    	int cur_row = 0;
-    	for(int i=0;i<len;i++) {
-    		rows[cur_row].append(s.charAt(i));
-    		if(cur_row==0||cur_row==numRows-1) {
-    			asc=-asc;
-    		}
-    		cur_row+=asc;
-    	}
-    	StringBuilder stringBuilder = new StringBuilder();
-    	for(int i=0;i<numRows;i++) {
-    		stringBuilder.append(rows[i].toString());
-    	}
-    	return stringBuilder.toString();
+        if(numRows==1)
+            return s;
+        int len = s.length();
+        StringBuilder[] rows = new StringBuilder[numRows];
+        for(int i=0;i<numRows;i++) {
+            rows[i] = new StringBuilder();
+        }
+        int asc = -1;
+        int cur_row = 0;
+        for(int i=0;i<len;i++) {
+            rows[cur_row].append(s.charAt(i));
+            if(cur_row==0||cur_row==numRows-1) {
+                asc=-asc;
+            }
+            cur_row+=asc;
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i=0;i<numRows;i++) {
+            stringBuilder.append(rows[i].toString());
+        }
+        return stringBuilder.toString();
     }
 ```
 
+时间复杂度：$$O(n)$$，n 是字符串的长度。
 
-
-
+空间复杂度：$$O(n)$$，保存每个字符需要的空间。
 
