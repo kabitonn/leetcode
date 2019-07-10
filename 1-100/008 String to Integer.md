@@ -30,7 +30,7 @@ Example 2:
 Input: "-42"  
 Output: -42  
 Explanation: The first non-whitespace character is '-', which is the minus sign.  
-            Then take as many numerical digits as possible, which gets 42.
+             Then take as many numerical digits as possible, which gets 42.
 ```
 
 Example 3:
