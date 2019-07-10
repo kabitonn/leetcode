@@ -12,7 +12,7 @@
 
 
 ```java
-    public int threeSumClosest1(int[] nums, int target) {
+    public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int len = nums.length;
         int min = Integer.MAX_VALUE;
