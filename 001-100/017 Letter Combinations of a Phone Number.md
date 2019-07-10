@@ -8,8 +8,6 @@ A mapping of digit to letters \(just like on the telephone buttons\) is given be
 
 ![](/assets/001-100/017-problem-1.png)
 
-
-
 Example:
 
 ```
