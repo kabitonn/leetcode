@@ -27,7 +27,6 @@
 ### 3.2 
 
 
-
 ```java
     public int removeElement(int[] nums, int val) {
         int len = nums.length;
