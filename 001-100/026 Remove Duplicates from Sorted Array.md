@@ -4,7 +4,7 @@
 
 Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
 
-Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with $$O(1)$$ extra memory.
 
 Example 1:
 ```
@@ -27,6 +27,22 @@ It doesn't matter what values are set beyond the returned length.
 ## 3. 解决方法
 
 ### 3.1 
+
+
+
+```java
+    public int removeDuplicates(int[] nums) {
+    	if(nums.length==0)
+    		return 0;
+    	int len = 1;
+    	for(int i=1;i<nums.length;i++) {
+    		if(nums[i]!=nums[i-1]) {
+    			nums[len++] = nums[i];
+    		}
+    	}
+        return len-1;
+    }
+```
 
 
 ### 3.2 
