@@ -14,8 +14,8 @@ If no valid conversion could be performed, a zero value is returned.
 
 **Note:**
 
-> Only the space character ' ' is considered as whitespace character.  
-> Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: $$[−2^{31},  2^{31} − 1]$$. If the numerical value is out of the range of representable values, INT\_MAX $$(2^{31} − 1)$$ or INT\_MIN $$(−2^{31})$$ is returned.
+> - Only the space character ' ' is considered as whitespace character.  
+> - Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: $$[−2^{31},  2^{31} − 1]$$. If the numerical value is out of the range of representable values, INT\_MAX $$(2^{31} − 1)$$ or INT\_MIN $$(−2^{31})$$ is returned.
 
 Example 1:
 
@@ -27,7 +27,7 @@ Example 2:
 > Input: "   -42"  
 > Output: -42  
 > Explanation: The first non-whitespace character is '-', which is the minus sign.  
->              Then take as many numerical digits as possible, which gets 42.
+> `            Then take as many numerical digits as possible, which gets 42.`
 
 Example 3:
 
