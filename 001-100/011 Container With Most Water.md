@@ -21,7 +21,28 @@ Output: 49
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 暴力法-遍历
+
+
+
+```java
+    public int maxArea(int[] height) {
+    	int maxArea = 0;
+    	int area;
+    	for(int i=0;i<height.length-1;i++) {
+    		for(int j=i+1;j<height.length;j++) {
+    			area = (j-i)*Math.min(height[i], height[j]);
+    			if(area>maxArea) {
+    				maxArea = area;
+    			}
+    		}
+    	}
+        return maxArea;
+    }
+
+```
+
+
 
 
 
