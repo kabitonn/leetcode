@@ -60,6 +60,11 @@ Explanation: There is no common prefix among the input strings.
 
 
 ```java
+    public String longestCommonPrefix(String[] strs) {
+    	if(strs == null ||strs.length == 0)
+    		return "";
+        return longestCommonPrefix(strs,0,strs.length-1);
+    }
     public String longestCommonPrefix(String[] strs, int left, int right) {
     	if(left == right)
     		return strs[left];
