@@ -8,7 +8,9 @@
   * [004.Median of Two Sorted Arrays\(H\)](/1-100/004 Median of Two Sorted Arrays.md)
   * [005.Longest Palindromic Substring\(H\)](/1-100/005 Longest Palindromic Substring.md)
   * [006. ZigZag Conversion\(M\)](/1-100/006 ZigZag Conversion.md)
-  * [007. Reverse Integer(E)](/1-100/007 Reverse Integer.md)
+  * [007. Reverse Integer\(E\)](/1-100/007 Reverse Integer.md)
+  * [008. String to Integer (atoi)(M)](/1-100/008 String to Integer (atoi).md)
   * [015.Three Sum\(M\)](/1-100/015 Three Sum.md)
+
 
 
