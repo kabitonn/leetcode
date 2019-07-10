@@ -68,15 +68,9 @@
     				res = sum;
     			}
     			if(diff<0) {
-    				/*while(low<high&&nums[low]==nums[low+1]) {
-    					low++;
-    				}*/
     				low++;
     			}
     			else if (diff>0) {
-    				/*while(low<high&&nums[high]==nums[high-1]) {
-    					high--;
-    				}*/
 					high--;
 				}
     			else {
