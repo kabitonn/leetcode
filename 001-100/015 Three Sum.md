@@ -82,6 +82,53 @@
     }
 ```
 
+### 3.3 双指针-有序判断去重
+
+
+
+```java
+    public List<List<Integer>> threeSum2(int[] nums) {
+    	List<List<Integer>> tuples = new ArrayList<>();
+    	Arrays.sort(nums);
+    	int len = nums.length;
+    	for(int i=0;i<len-2;i++) {
+    		//为了保证不加入重复的 list,因为是有序的，所以如果和前一个元素相同，只需要继续后移就可以
+    		if(i>0&&nums[i]==nums[i-1]) {
+    			continue;
+    		}
+    		//两个指针,并且头指针从i + 1开始，防止加入重复的元素
+    		int low = i+1;
+    		int high = len-1;
+    		while(low<high) {
+    			int sum = nums[low]+nums[high];
+    			if(sum==-nums[i]) {
+    				List<Integer> tuple = Arrays.asList(nums[i],nums[low],nums[high]);
+    				tuples.add(tuple);
+    				//元素相同要后移，防止加入重复的 list
+    				while(low<high&&nums[low]==nums[low+1]) {
+    					low++;
+    				}
+    				while(low<high&&nums[high]==nums[high-1]) {
+    					high--;
+    				}
+    				low++;
+    				high--;
+    			}
+    			else if (sum>-nums[i]) {
+					high--;
+				}
+    			else if (sum<-nums[i]) {
+    				low++;
+				}
+    		}
+    	}
+    	return tuples;
+    }
+
+```
+
+
+
 
 
 
