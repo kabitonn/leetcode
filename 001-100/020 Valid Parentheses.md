@@ -9,6 +9,50 @@
 ### 3.1 
 
 
+
+```java
+	public boolean isValid(String s) {
+		Stack<Character> bracket = new Stack<>();
+		for(char c:s.toCharArray()) {
+			switch (c) {
+			case '(':
+			case '[':
+			case '{':
+				bracket.push(c);
+				break;
+			case ')':
+				if(!bracket.empty()&&bracket.peek()=='(') {
+					bracket.pop();
+				}
+				else {
+					return false;
+				}
+				break;
+			case ']':
+				if(!bracket.empty()&&bracket.peek()=='[') {
+					bracket.pop();
+				}
+				else {
+					return false;
+				}
+				break;
+			case '}':
+				if(!bracket.empty()&&bracket.peek()=='{') {
+					bracket.pop();
+				}
+				else {
+					return false;
+				}
+				break;
+			default:
+				break;
+			}
+		}
+		return bracket.empty();
+	}
+```
+
+
 ### 3.2
 
 
