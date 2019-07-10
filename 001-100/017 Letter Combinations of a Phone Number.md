@@ -51,7 +51,7 @@
 ```java
 	private String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 	
-	public List<String> letterCombinations1(String digits) {
+	public List<String> letterCombinations(String digits) {
     	LinkedList<String> list = new LinkedList<>();
         if(digits.length()==0)
     		return list;
@@ -73,7 +73,7 @@
 
 ```java    
     private String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-    public List<String> letterCombinations2(String digits) {
+    public List<String> letterCombinations(String digits) {
     	List<String> list = new ArrayList<>();
     	if(digits.equals(""))
     		return list;
