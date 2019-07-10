@@ -18,8 +18,68 @@ Output: 1->1->2->3->4->4->5->6
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 水平归并
+
+
+```java
+    public ListNode mergeKLists(ListNode[] lists) {
+        ListNode cur = null;
+        for(ListNode l:lists) {
+        	cur = mergeTwoLists(cur, l);
+        }
+        return cur;
+    }
+```
+
+```java
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    	ListNode start = new ListNode(0);
+    	ListNode ln1 = l1,ln2 = l2;
+    	ListNode cur = start;
+    	while(ln1!=null&&ln2!=null) {
+    		if(ln1.val<ln2.val) {
+    			cur.next = new ListNode(ln1.val);
+    			ln1 = ln1.next;
+    		}
+    		else {
+    			cur.next = new ListNode(ln2.val);
+    			ln2 = ln2.next;
+    		}
+    		cur = cur.next;
+    	}
+    	while(ln1!=null) {
+    		cur.next = new ListNode(ln1.val);
+			ln1 = ln1.next;
+			cur = cur.next;
+    	}
+    	while(ln2!=null) {
+    		cur.next = new ListNode(ln2.val);
+			ln2 = ln2.next;
+			cur = cur.next;
+    	}
+        return start.next;
+    }
+```
 
 
 
-### 3.2 
+### 3.2 两两归并
+
+
+
+```java
+    public ListNode mergeKLists(ListNode[] lists) {
+    	int cap = lists.length;
+    	if(cap == 0)
+    		return null;
+        ListNode[] res = lists;
+        while(cap!=1) {
+        	for(int i=0;i<cap/2;i++) {
+        		res[i]=mergeTwoLists(res[i], res[cap-1-i]);
+        	}
+        	cap=cap%2==0?cap/2:cap/2+1;
+        }
+        return res[0];
+    }
+```
+
