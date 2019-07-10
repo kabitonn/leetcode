@@ -49,8 +49,49 @@
 
 
 ```java
-
+	private String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+	
+	public List<String> letterCombinations1(String digits) {
+    	LinkedList<String> list = new LinkedList<>();
+        if(digits.length()==0)
+    		return list;
+        list.add("");
+        while(list.peek().length()!=digits.length()) {
+        	String head = list.remove();
+        	String s = mapping[digits.charAt(head.length())-'0'];
+        	for( char c:s.toCharArray()) {
+        		list.add(head+c);
+        	}
+        }
+        return list;
+    }
 ```
+
+### 3.3
+
+
+
+```java    
+    private String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    public List<String> letterCombinations2(String digits) {
+    	List<String> list = new ArrayList<>();
+    	if(digits.equals(""))
+    		return list;
+    	combination(digits,"",list);
+    	return list;
+    }
+    public void combination(String digits, String prefix, List<String> list) {
+    	if(prefix.length()==digits.length()){
+    		list.add(prefix);
+    		return;
+    	}
+    	String s = mapping[digits.charAt(prefix.length())-'0'];
+    	for(char c:s.toCharArray()){
+    		combination(digits, prefix+c, list);
+    	}
+    }
+```
+
 
 
 
