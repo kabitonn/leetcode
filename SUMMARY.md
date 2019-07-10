@@ -22,6 +22,7 @@
   * [019. Remove Nth Node From End of List(M)](/001-100/019 Remove Nth Node From End of List.md)
   * [020. Valid Parentheses(E)](/001-100/020 Valid Parentheses.md)
   * [021. Merge Two Sorted Lists(E)](/001-100/021 Merge Two Sorted Lists.md)
+  * [022. Generate Parentheses(M)](/001-100/022 Generate Parentheses.md)
 
 
 
