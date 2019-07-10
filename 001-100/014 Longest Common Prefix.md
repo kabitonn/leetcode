@@ -65,6 +65,7 @@ Explanation: There is no common prefix among the input strings.
     		return "";
         return longestCommonPrefix(strs,0,strs.length-1);
     }
+    
     public String longestCommonPrefix(String[] strs, int left, int right) {
     	if(left == right)
     		return strs[left];
@@ -74,6 +75,7 @@ Explanation: There is no common prefix among the input strings.
     	String lcp = commonPrefix(lcpleft,  lcpright);
     	return lcp;
     }
+    
     public String commonPrefix(String leftStr, String rightStr) {
     	int min = Math.min(leftStr.length(), rightStr.length());
     	for(int i=0;i<min;i++) {
