@@ -88,3 +88,51 @@ For example, given n = 3, a solution set is:
 
 
 
+```java
+    public List<String> generateParenthesis(int n) {
+        List<String> list = new ArrayList<>();
+        char[] str = new char[n*2];
+        generate2(list,str, 0,0,0, n);
+        return list;
+    }
+    public void generate(List<String> list,char[] str,Integer index,int left,int right,int n) {
+    	if(index==n*2) {
+    		list.add(String.valueOf(str));
+    		return;
+    	}
+    	if(left<n) {
+    		str[index] = '(';
+    		generate2(list, str, index+1, left+1, right, n);
+    	}
+    	if(right<left) {
+    		str[index] = ')';
+    		generate2(list, str, index+1, left, right+1, n);
+    	}
+    }
+```
+
+### 3.3 递归
+
+
+
+```java
+    public List<String> generateParenthesis(int n) {
+        List<String> list = new ArrayList<>();
+        if(n==0) {
+        	list.add("");
+        }
+        for(int a=0;a<n;a++) {
+        	for(String left:generateParenthesis(a)) {
+        		for(String right:generateParenthesis(n-1-a)) {
+        			list.add("("+left+")"+right);
+        		}
+        	}
+        }
+        return list;
+    }
+```
+
+
+
+
+
