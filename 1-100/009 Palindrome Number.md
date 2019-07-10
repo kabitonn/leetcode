@@ -33,7 +33,7 @@ Follow up:
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 完全reverse
 
 
 ```java
@@ -51,6 +51,28 @@ Follow up:
     }
 ```
 
+### 3.2 一半reverse
 
+
+
+```java
+	public boolean isPalindrome(int x) {
+		if(x<0) {
+			return false;
+		}
+		int digit = (int)Math.log10(x)+1;
+		int y = 0;
+		for(int i=0;i<digit/2;i++) {
+			y=y*10+x%10;
+			x/=10;
+		}
+		if(digit%2==0) {
+			return x==y?true:false;
+		}
+		else {
+			return (x/10)==y?true:false;
+		}
+    }
+```
 
 
