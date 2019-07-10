@@ -1,4 +1,4 @@
-# [101. Symmetric Tree(E)](https://leetcode-cn.com/problems/symmetric-tree/)
+# [101. Symmetric Tree](https://leetcode-cn.com/problems/symmetric-tree/)
 
 ## 1. 题目描述(简单)
 
