@@ -64,7 +64,7 @@ Output: -2147483648
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 溢出预处理
 
 ```java
     public int myAtoi(String str) {
@@ -107,58 +107,54 @@ Output: -2147483648
         }
         return num;
     }
-    
 ```
 
-### 3.2 
-
-
+### 3.2 转换数据类型
 
 ```java
     public int myAtoi(String str) {
-		long num = 0;
-		boolean isMinus = false;
-		String s = str.trim();
-		int start=0;
-		if(s.length()==0)
-			return 0;
-		if(s.charAt(start)=='-') {
-			isMinus = true;
-			start++;
-		}
-		else if(s.charAt(start)=='+') {
-			start++;
-		}
-		else if(s.charAt(start)>='0'&&s.charAt(start)<='9') {
-			
-		}
-		else {
-			return 0;
-		}
-		for(int i=start;i<s.length();i++) {
-			if(s.charAt(i)>='0' && s.charAt(i)<='9') {
-				int n = s.charAt(i)-'0';
-				num = num*10+n;
-				if(num>Integer.MAX_VALUE) {
-					if(isMinus)
-						return Integer.MIN_VALUE;
-					else
-						return Integer.MAX_VALUE;
+        long num = 0;
+        boolean isMinus = false;
+        String s = str.trim();
+        int start=0;
+        if(s.length()==0)
+            return 0;
+        if(s.charAt(start)=='-') {
+            isMinus = true;
+            start++;
+        }
+        else if(s.charAt(start)=='+') {
+            start++;
+        }
+        else if(s.charAt(start)>='0'&&s.charAt(start)<='9') {
 
-				}
-			}
-			else {
-				break;
-			}
-		}
-		if(isMinus) {
-			num = -num;
-		}
-		
-		return (int)num;
+        }
+        else {
+            return 0;
+        }
+        for(int i=start;i<s.length();i++) {
+            if(s.charAt(i)>='0' && s.charAt(i)<='9') {
+                int n = s.charAt(i)-'0';
+                num = num*10+n;
+                if(num>Integer.MAX_VALUE) {
+                    if(isMinus)
+                        return Integer.MIN_VALUE;
+                    else
+                        return Integer.MAX_VALUE;
+
+                }
+            }
+            else {
+                break;
+            }
+        }
+        if(isMinus) {
+            num = -num;
+        }
+
+        return (int)num;
     }
 ```
-
 
 
 
