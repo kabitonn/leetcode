@@ -50,6 +50,38 @@ Explanation: There is no common prefix among the input strings.
 ```
 
 
+### 3.2 水平比较
+
+
+
+
+### 3.3 递归
+
+
+
+```java
+    public String longestCommonPrefix(String[] strs, int left, int right) {
+    	if(left == right)
+    		return strs[left];
+    	int mid = (left+right)/2;
+    	String lcpleft = longestCommonPrefix(strs, left, mid);
+    	String lcpright = longestCommonPrefix(strs, mid+1, right);
+    	String lcp = commonPrefix(lcpleft,  lcpright);
+    	return lcp;
+    }
+    public String commonPrefix(String leftStr, String rightStr) {
+    	int min = Math.min(leftStr.length(), rightStr.length());
+    	for(int i=0;i<min;i++) {
+    		if(leftStr.charAt(i)!=rightStr.charAt(i)) {
+    			return leftStr.substring(0, i);
+    		}
+    	}
+		return leftStr.substring(0,min);
+	}
+```
+
+
+
 
 
 
