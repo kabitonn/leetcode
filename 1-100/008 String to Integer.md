@@ -14,8 +14,10 @@ If no valid conversion could be performed, a zero value is returned.
 
 **Note:**
 
-> * Only the space character ' ' is considered as whitespace character.  
-> * Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: $$[−2^{31},  2^{31} − 1]$$. If the numerical value is out of the range of representable values, INT\_MAX $$(2^{31} − 1)$$ or INT\_MIN $$(−2^{31})$$ is returned.
+```
+Only the space character ' ' is considered as whitespace character.  
+Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: $$[−2^{31},  2^{31} − 1]$$. If the numerical value is out of the range of representable values, INT\_MAX $$(2^{31} − 1)$$ or INT\_MIN $$(−2^{31})$$ is returned.
+```
 
 Example 1:
 
@@ -42,19 +44,23 @@ Explanation: Conversion stops at digit '3' as the next character is not a numeri
 ```
 
 Example 4:
+
 ```
 Input: "words and 987"  
 Output: 0
 ```
+
 Explanation: The first non-whitespace character is 'w', which is not a numerical digit or a +/- sign. Therefore no valid conversion could be performed.
 
 Example 5:
+
 ```
 Input: "-91283472332"  
 Output: -2147483648  
 Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.  
              Thefore INT\_MIN $$(−2^{31})$$ is returned.
 ```
+
 ## 2. 思路
 
 ## 3. 解决方法
