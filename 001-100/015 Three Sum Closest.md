@@ -7,7 +7,7 @@
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 暴力遍历
 
 
 
@@ -42,4 +42,51 @@
 
 
 
-### 3.2
+### 3.2 双指针
+
+
+
+```java
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);
+        int len = nums.length;
+        int min = Integer.MAX_VALUE;
+        int res = target;
+        int sum;
+        int diff;
+    	for(int i=0;i<len-2;i++) {
+    		if(i>0&&nums[i]==nums[i-1]) {
+    			continue;
+    		}
+    		int low = i+1;
+    		int high = len-1;
+    		while(low<high) {
+    			sum = nums[low]+nums[high]+nums[i];
+    			diff = sum - target;
+    			if(Math.abs(diff)<min) {
+    				min = Math.abs(diff);
+    				res = sum;
+    			}
+    			if(diff<0) {
+    				/*while(low<high&&nums[low]==nums[low+1]) {
+    					low++;
+    				}*/
+    				low++;
+    			}
+    			else if (diff>0) {
+    				/*while(low<high&&nums[high]==nums[high-1]) {
+    					high--;
+    				}*/
+					high--;
+				}
+    			else {
+    				break;
+    			}
+    			
+    		}
+    	}
+        return res;
+    }
+```
+
+
