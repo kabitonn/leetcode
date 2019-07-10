@@ -29,6 +29,11 @@
   * [026. Remove Duplicates from Sorted Array(E)](/001-100/026 Remove Duplicates from Sorted Array.md)
   * [027. Remove Element(E)](/001-100/027 Remove Element.md)
   * [028. Implement strStr()(E)](/001-100/028 Implement strStr.md)
+  * [029. Divide Two Integers(M)](/001-100/029 Divide Two Integers.md)
+  * [031. Next Permutation(M)](/001-100/031Next Permutation.md)
+  * [033. Search in Rotated Sorted Array(M)](/001-100/033 Search in Rotated Sorted Array.md)
+  * [034. Find First and Last Position of Element in Sorted Array(M)](/001-100/034 Find First and Last Position of Element in Sorted Array.md)
+  * [035. Search Insert Position(E)](/001-100/035 Search Insert Position.md)
 
 
 
