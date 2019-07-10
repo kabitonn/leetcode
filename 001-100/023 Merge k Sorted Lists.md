@@ -145,5 +145,29 @@ Output: 1->1->2->3->4->4->5->6
     }
 ```
 
+### 3.5 数组排序
+
+
+
+```java
+    public ListNode mergeKLists(ListNode[] lists) {
+    	ListNode start = new ListNode(0);
+    	List<Integer> vals = new ArrayList<>();
+    	ListNode cur = start;
+    	for(ListNode l:lists) {
+    		while(l!=null) {
+    			vals.add(l.val);
+    			l=l.next;
+    		}
+    	}
+    	Collections.sort(vals);
+    	for(int val:vals) {
+    		cur.next = new ListNode(val);
+    		cur = cur.next;
+    	}
+    	return start.next;
+    }
+```
+
 
 
