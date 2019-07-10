@@ -83,3 +83,35 @@ Output: 1->1->2->3->4->4->5->6
     }
 ```
 
+### 3.3 垂直归并
+
+
+
+```java
+    public ListNode mergeKLists(ListNode[] lists) {
+    	ListNode start = new ListNode(0);
+    	ListNode cur = start;
+    	while(true) {
+    		boolean isALL = true;
+    		int min = Integer.MAX_VALUE;
+    		int minIndex = -1;
+    		for(int i=0;i<lists.length;i++) {
+    			if(lists[i]!=null) {
+    				if(lists[i].val<min) {
+    					min = lists[i].val;
+    					minIndex = i;
+    				}
+    				isALL = false;
+    			}
+    		}
+    		if(isALL)
+    			break;
+    		cur.next = lists[minIndex];
+    		cur = cur.next;
+    		lists[minIndex] = lists[minIndex].next; 
+    	}
+    	return start.next;
+    }
+```
+
+
