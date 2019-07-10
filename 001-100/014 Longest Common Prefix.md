@@ -1,0 +1,28 @@
+# [14. Longest Common Prefix](https://leetcode-cn.com/problems/longest-common-prefix/)
+
+## 1. 题目描述(简单)
+
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+Example 1:
+```
+Input: ["flower","flow","flight"]
+Output: "fl"
+```
+Example 2:
+```
+Input: ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+```
+**Note:**
+> All given inputs are in lowercase letters a-z
+
+## 2. 思路
+
+## 3. 解决方法
+
+
+
