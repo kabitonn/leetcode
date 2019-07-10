@@ -35,23 +35,26 @@ Explanation: The first non-whitespace character is '-', which is the minus sign.
 
 Example 3:
 
-> Input: "4193 with words"  
-> Output: 4193  
-> Explanation: Conversion stops at digit '3' as the next character is not a numerical digit.
+```
+Input: "4193 with words"  
+Output: 4193  
+Explanation: Conversion stops at digit '3' as the next character is not a numerical digit.
+```
 
 Example 4:
-
-> Input: "words and 987"  
-> Output: 0  
-> - Explanation: The first non-whitespace character is 'w', which is not a numerical digit or a +/- sign. Therefore no valid conversion could be performed.
+```
+Input: "words and 987"  
+Output: 0
+```
+Explanation: The first non-whitespace character is 'w', which is not a numerical digit or a +/- sign. Therefore no valid conversion could be performed.
 
 Example 5:
-
-> Input: "-91283472332"  
-> Output: -2147483648  
-> Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.  
->              Thefore INT\_MIN $$(−2^{31})$$ is returned.
-
+```
+Input: "-91283472332"  
+Output: -2147483648  
+Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.  
+             Thefore INT\_MIN $$(−2^{31})$$ is returned.
+```
 ## 2. 思路
 
 ## 3. 解决方法
