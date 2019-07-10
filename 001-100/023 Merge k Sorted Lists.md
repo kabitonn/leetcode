@@ -114,4 +114,36 @@ Output: 1->1->2->3->4->4->5->6
     }
 ```
 
+### 3.4 优先队列
+
+
+
+```java
+    public ListNode mergeKLists(ListNode[] lists) {
+    	ListNode start = new ListNode(0);
+    	ListNode cur = start;
+    	Queue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
+    		@Override
+    		public int compare(ListNode o1, ListNode o2) {
+    			return o1.val-o2.val;
+    		}
+		});
+    	for(ListNode l:lists) {
+    		if(l!=null) {
+    			queue.add(l);
+    		}
+    	}
+    	while(!queue.isEmpty()) {
+    		ListNode pNode = queue.poll();
+    		cur.next = new ListNode(pNode.val);
+    		cur = cur.next;
+    		if(pNode.next!=null) {
+    			queue.add(pNode.next);
+    		}
+    	}
+    	return start.next;
+    }
+```
+
+
 
