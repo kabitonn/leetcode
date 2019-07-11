@@ -22,10 +22,15 @@ Output: -1
 
 ## 2. 思路
 
+1. 遍历每个字符
+2. 遍历相同长度子串
+3. BF
+4. KMP
+
+
 ## 3. 解决方法
 
-### 3.1 依此比较每个字符
-
+### 3.1 遍历每个字符比较
 ```java
     public int strStr(String haystack, String needle) {
         if(needle.length()==0)
@@ -66,8 +71,7 @@ Output: -1
     }
 ```
 
-### 3.2 取相同长度子串比较
-
+### 3.2 遍历相同长度子串
 ```java
     public int strStr(String haystack, String needle) {
     	for(int i=0;i<=haystack.length()-needle.length();i++) {
