@@ -153,13 +153,13 @@ Output: [-1,-1]
 搜索一个数，如果存在，返回其索引，否则返回 -1
 ```java
     public int binarySearch(int[] nums, int target) {
-    	int low = 0;
-        int high = nums.length-1;	//注意
-        while(low<=high) {	//注意
-        	int mid = (low+high)/2;
+    	int left = 0;
+        int right = nums.length-1;	//注意
+        while(left<=right) {	//注意
+        	int mid = (left+right)/2;
         	if(nums[mid]==target) {	return mid;}
-        	else if (nums[mid]>target) {	high = mid - 1;}
-        	else if (nums[mid]<target) {	low = mid + 1;}
+        	else if (nums[mid]>target) {	right = mid - 1;}
+        	else if (nums[mid]<target) {	left = mid + 1;}
         }
         return -1;
     }
@@ -172,7 +172,59 @@ Output: [-1,-1]
 
 我们这个算法中使用的是前者 [left, right] 两端都闭的区间。这个区间其实就是每次进行搜索的区间，我们不妨称为「搜索区间」
 
+为什么 left = mid + 1，right = mid - 1？我看有的代码是 right = mid或者 left = mid`，没有这些加加减减，到底怎么回事，怎么判断？
+
+答：这也是二分查找的一个难点，不过只要你能理解前面的内容，就能够很容易判断。
+
+刚才明确了「搜索区间」这个概念，而且本算法的搜索区间是两端都闭的，即 [left, right]。那么当我们发现索引 mid 不是要找的 target 时，如何确定下一步的搜索区间呢？
+
+当然是 [left, mid - 1] 或者 [mid + 1, right] 对不对？因为 mid 已经搜索过，应该从搜索区间中去除。
 
 
-### 4.2 
+
+
+### 4.2 寻找左侧边界的二分搜索
+
+
+
+```java
+    public int binarySearchMin(int[] nums, int target) {
+    	int left = 0;
+        int right = nums.length;	//注意
+        while(left<right) {	//注意
+        	int mid = (left+right)/2;
+        	if (nums[mid]<target) {	left = mid + 1;}
+			else if(nums[mid]>=target){	right = mid;}//注意
+        }
+        left = (left<nums.length && nums[left]==target)?left:-1;
+        return left;
+    }
+```
+1. 为什么 while(left < right) 而不是 <= ?
+
+答：用相同的方法分析，因为 right = nums.length 而不是 nums.length - 1。因此每次循环的「搜索区间」是 [left, right) 左闭右开。
+
+while(left < right)终止的条件是 left == right，此时搜索区间 [left, left) 为空，所以可以正确终止。
+
+2. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
+
+
+```java
+    while (left < right) {
+        //...
+    }
+    // target 比所有数都大
+    if (left == nums.length) return -1;
+    // 类似之前算法的处理方式
+    return nums[left] == target ? left : -1;
+
+```
+
+
+
+3. 为什么 left = mid + 1，right = mid ？和之前的算法不一样？
+
+答：这个很好解释，因为我们的「搜索区间」是 (left, right) 左闭右开，所以当 nums[mid] 被检测之后，下一步的搜索区间应该去掉 mid 分割成两个区间，即 [left, mid) 或 [mid + 1, right)。
+
+
 
