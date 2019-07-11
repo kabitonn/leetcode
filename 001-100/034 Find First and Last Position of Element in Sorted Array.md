@@ -85,7 +85,7 @@ Output: [-1,-1]
     }
 ```
 
-
+修改二分查找，找到和目标值相等的索引最大的值，向前遍历找到索引最大值
 
 ```java
     public int[] searchRange(int[] nums, int target) {
