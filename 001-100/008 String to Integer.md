@@ -1,4 +1,4 @@
-# [8. String to Integer \(atoi\)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
+## [8. String to Integer \(atoi\)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
 
 ## 1. 题目描述\(中等\)
 

@@ -1,4 +1,4 @@
-#### [2. Add Two Numbers](https://leetcode-cn.com/problems/add-two-numbers/)
+## [2. Add Two Numbers](https://leetcode-cn.com/problems/add-two-numbers/)
 
 ## 1. 题目描述（中等）
 
@@ -7,6 +7,7 @@ You are given two non-empty linked lists representing two non-negative integers.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 Example:
+
 ```
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
@@ -98,8 +99,4 @@ Explanation: 342 + 465 = 807.
 ### 4.1 思路1
 
 首先想到的是链表先逆序计算，然后将结果再逆序呗，这就转换到我们之前的情况了。
-
-
-
-
 

@@ -1,28 +1,35 @@
-#### [3. Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+## [3. Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
 ## 1. 题目描述\(中等\)
 
 Given a string, find the length of the longest substring without repeating characters.
 
 Example 1:
+
 ```
 Input: "abcabcbb"
 Output: 3
 Explanation: The answer is "abc", with the length of 3.
 ```
+
 Example 2:
+
 ```
 Input: "bbbbb"
 Output: 1
 Explanation: The answer is "b", with the length of 1.
 ```
+
 Example 3:
+
 ```
 Input: "pwwkew"
 Output: 3
 Explanation: The answer is "wke", with the length of 3.
 ```
-**Note** 
+
+**Note**
+
 > that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
 ## 2. 思路
@@ -139,12 +146,12 @@ $$j$$，如果它不在 HashSet 中，我们会继续滑动 jj。直到 $$s[j]$$
     }
 ```
 
-与上述解法相比，由于采取了 i 跳跃的形式，所以 map 之前存的字符没有进行 remove ，所以 if 语句中进行了Math.max \( map.get \(c\), i \)，要确认得到的下标不是 i 前边的。  
+与上述解法相比，由于采取了 i 跳跃的形式，所以 map 之前存的字符没有进行 remove ，所以 if 语句中进行了Math.max \( map.get \(c\), i \)，要确认得到的下标不是 i 前边的。
 
 在每次循环中都进行更新，因为 maxNum 更新前 i 都进行了更新，已经保证了当前的子串符合条件，所以可以更新 maxNum 。而解法二中，只有当当前的子串不包含当前的字符时，才进行更新。
 
 时间复杂度：我们将 2n 优化到了 n ，但最终还是和之前一样，$$O(n)$$。
-  
+
 空间复杂度：也是一样的，$$O(min(m，n))$$。
 
 ### 3.4 优化滑动窗口改
@@ -167,3 +174,4 @@ $$j$$，如果它不在 HashSet 中，我们会继续滑动 jj。直到 $$s[j]$$
 时间复杂度：$$O(n)$$
 
 空间复杂度：$$O(m)$$，$$m$$代表字符集的大小。
+

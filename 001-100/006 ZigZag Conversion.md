@@ -1,4 +1,4 @@
-#### [6. ZigZag Conversion](https://leetcode-cn.com/problems/zigzag-conversion/)
+## [6. ZigZag Conversion](https://leetcode-cn.com/problems/zigzag-conversion/)
 
 ## 1. 题目描述\(中等\)
 

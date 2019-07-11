@@ -1,4 +1,4 @@
-#### [7. Reverse Integer](https://leetcode-cn.com/problems/reverse-integer/)
+## [7. Reverse Integer](https://leetcode-cn.com/problems/reverse-integer/)
 
 ## 1. 题目描述
 
