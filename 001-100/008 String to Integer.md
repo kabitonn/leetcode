@@ -13,6 +13,7 @@ If the first sequence of non-whitespace characters in str is not a valid integra
 If no valid conversion could be performed, a zero value is returned.
 
 **Note:**
+
 > * Only the space character ' ' is considered as whitespace character.  
 > * Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: $$[−2^{31},  2^{31} − 1]$$. If the numerical value is out of the range of representable values, INT\_MAX $$(2^{31} − 1)$$ or INT\_MIN $$(−2^{31})$$ is returned.
 
@@ -31,6 +32,7 @@ Output: -42
 Explanation: The first non-whitespace character is '-', which is the minus sign.  
              Then take as many numerical digits as possible, which gets 42.
 ```
+
 Example 3:
 
 ```
@@ -38,6 +40,7 @@ Input: "4193 with words"
 Output: 4193
 Explanation: Conversion stops at digit '3' as the next character is not a numerical digit.
 ```
+
 Example 4:
 
 ```
@@ -46,6 +49,7 @@ Output: 0
 Explanation: The first non-whitespace character is 'w', which is not a numerical digit or a +/- sign.        
              Therefore no valid conversion could be performed.
 ```
+
 Example 5:
 
 ```
@@ -56,6 +60,12 @@ Explanation: The number "-91283472332" is out of the range of a 32-bit signed in
 ```
 
 ## 2. 思路
+
+从左遍历字符串，可以遇到空格，直到遇到 ' + ' 或者数字或者 ' - ' 就表示要转换的数字开始，如果之后遇到除了数字的其他字符（包括空格）就结束遍历，输出结果
+
+如果遇到空格或者 ' + ' 或者数字或者 ' - ' 之前遇到了其他字符，就直接输出 0 ，例如 " we1332"。
+
+如果转换的数字超出了 int ，就返回 intMax 或者 intMin。
 
 ## 3. 解决方法
 
@@ -150,8 +160,6 @@ Explanation: The number "-91283472332" is out of the range of a 32-bit signed in
         return (int)num;
     }
 ```
-
-
 
 
 
