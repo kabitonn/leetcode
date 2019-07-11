@@ -1,4 +1,4 @@
-# [14. Longest Common Prefix](https://leetcode-cn.com/problems/longest-common-prefix/)
+## [14. Longest Common Prefix](https://leetcode-cn.com/problems/longest-common-prefix/)
 
 ## 1. 题目描述\(简单\)
 
