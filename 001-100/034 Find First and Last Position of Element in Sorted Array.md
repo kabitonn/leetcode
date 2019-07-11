@@ -73,27 +73,37 @@ Output: [-1,-1]
         return new int[]{-1,-1};
     }
     public int binarySearchMin(int[] nums, int target) {
-    	int low = 0;
+        int low = 0;
         int high = nums.length;
         while(low<high) {
-        	int mid = (low+high)/2;
-        	if (nums[mid]<target) {	low = mid + 1;}
-			else if(nums[mid]>=target){	high = mid;}
+            int mid = (low+high)/2;
+            if (nums[mid]<target) {    low = mid + 1;}
+            else if(nums[mid]>=target){    high = mid;}
         }
         low = (low<nums.length && nums[low]==target)?low:-1;
         return low;
     }
-	public int binarySearchMax(int[] nums, int target) {
-		int low = 0;
-		int high = nums.length;
-		while(low<high) {
-			int mid = (low+high)/2;
-			if (nums[mid]<=target) {	low = mid + 1;}
-			else if(nums[mid]>target){	high = mid;}
+	public int[] searchRange(int[] nums, int target) {
+		int right = binarySearchMin(nums, target);
+		if(right!=-1) {
+			int start = right;
+			int end = start;
+			while(start>0 && nums[start-1]==target) {start--;}
+			return new int[] {start,end};
 		}
-		low = (low>0 && nums[low-1]==target)?low-1:-1;
-		return low;
+		return new int[]{-1,-1};
 	}
+    public int binarySearchMax(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length;
+        while(low<high) {
+            int mid = (low+high)/2;
+            if (nums[mid]<=target) {    low = mid + 1;}
+            else if(nums[mid]>target){    high = mid;}
+        }
+        low = (low>0 && nums[low-1]==target)?low-1:-1;
+        return low;
+    }
 ```
 
 
