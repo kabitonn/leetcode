@@ -114,7 +114,7 @@
   * [405. Convert a Number to Hexadecimal(E)](/401-500/405 Convert a Number to Hexadecimal.md)
   * [409. Longest Palindrome(E)](/401-500/409 Longest Palindrome.md)
   * [412. Fizz Buzz(E)](/401-500/412 Fizz Buzz.md)
-  * [414. (E)](/401-500/414 .md)
+  * [414. Third Maximum Number(E)](/401-500/414 Third Maximum Number.md)
   * [415. (E)](/401-500/415 .md)
   * [429. (E)](/401-500/429 .md)
   * [434. (E)](/401-500/434 .md)
