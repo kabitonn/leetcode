@@ -22,7 +22,7 @@ But the following [1,2,2,null,3,null,3] is not:
    3    3
 ```
 **Note**:
-> Bonus points if you could solve it both recursively and iteratively.
+- Bonus points if you could solve it both recursively and iteratively.
 
 
 
