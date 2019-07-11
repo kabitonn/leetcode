@@ -1,4 +1,4 @@
-# [1. Two Sum](https://leetcode-cn.com/problems/two-sum/)
+## [1. Two Sum](https://leetcode-cn.com/problems/two-sum/)
 
 ## 1. 题目描述（简单）
 
