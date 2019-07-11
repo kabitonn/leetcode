@@ -15,6 +15,7 @@ For example, given n = 3, a solution set is:
   "()()()"
 ]
 ```
+
 ## 2. 思路
 
 ## 3. 解决方法
