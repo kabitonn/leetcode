@@ -51,8 +51,33 @@ Output: [-1,-1]
     }
 ```
 
+### 3.2 改进二分查找
 
 
-### 3.2
+```java
+    public int[] searchRange(int[] nums, int target) {
+        int left = binarySearchMin(nums, target);
+        if(left!=-1) {
+    		int start = left;
+    		int end = start;
+    		while(end<nums.length-1 && nums[end+1]==target) {end++;}
+    		return new int[] {start,end};
+    	}
+        return new int[]{-1,-1};
+    }
+        public int binarySearchMin(int[] nums, int target) {
+    	int low = 0;
+        int high = nums.length-1;
+        while(low<high) {
+        	int mid = (low+high)/2;
+        	if (nums[mid]<target) {	low = mid + 1;}
+        	else{	high = mid;}
+        }
+        low = (low<nums.length && nums[low]==target)?low:-1;
+        return low;
+    }
+```
+
+
 
 
