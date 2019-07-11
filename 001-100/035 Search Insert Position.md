@@ -44,17 +44,48 @@ Output: 0
 ### 3.1 遍历
 
 ```java
-	public int searchInsert(int[] nums, int target) {
-		int i=0;
-		for(;i<nums.length;i++) {
-        	if(nums[i]==target) {	return i;	}
-        	else if(nums[i]>target) {	return i;	}
+    public int searchInsert(int[] nums, int target) {
+        int i=0;
+        for(;i<nums.length;i++) {
+            if(nums[i]==target) {    return i;    }
+            else if(nums[i]>target) {    return i;    }
         }
-		return i;
+        return i;
     }
 ```
 
-### 3.2
+### 3.2 二分查找
+
+```java
+	public int searchInsert(int[] nums, int target) {
+		int low = 0;
+		int high = nums.length-1;
+		while(low<high) {
+			int mid = (low+high)/2;
+			if(nums[mid]==target) {	return mid;	}
+			else if(nums[mid]<target) {	low = mid+1;}
+			else if(nums[mid]>target) {	high = mid;	}
+		}
+		low = (nums[low]<target)?low+1:low;
+		return low;
+    }
+```
+
+
+
+```java
+	public int searchInsert(int[] nums, int target) {
+		int low = 0;
+		int high = nums.length-1;
+		while(low<=high) {
+			int mid = (low+high)/2;
+			if(nums[mid]==target) {	return mid;	}
+			else if(nums[mid]<target) {	low = mid+1;}
+			else if(nums[mid]>target) {	high = mid-1;	}
+		}
+		return low;
+    }
+```
 
 
 
