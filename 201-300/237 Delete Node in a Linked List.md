@@ -8,7 +8,7 @@ Given linked list -- head = \[4,5,1,9\], which looks like following:
 
 ![](/assets/201-300/237-problem-1.png)
 
-Example 1:
+**Example 1:**
 
 ```
 Input: head = [4,5,1,9], node = 5
@@ -17,7 +17,7 @@ Explanation: You are given the second node with value 5, the linked list should 
              after calling your function.
 ```
 
-Example 2:
+**Example 2:**
 
 ```
 Input: head = [4,5,1,9], node = 1
