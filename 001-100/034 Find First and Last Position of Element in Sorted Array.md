@@ -24,9 +24,12 @@ Output: [-1,-1]
 
 ## 2. 思路
 
+二分查找
+
 ## 3. 解决方法
 
 ### 3.1 一般二分查找+前后遍历
+一般二分查找找到相等值索引，前后遍历找到最小最大索引
 
 ```java
     public int[] searchRange(int[] nums, int target) {
@@ -54,6 +57,9 @@ Output: [-1,-1]
 ```
 
 ### 3.2 改进二分查找
+
+修改二分查找，找到和目标值相等的索引最小的值，向后遍历找到索引最大值
+
 
 ```java
     public int[] searchRange(int[] nums, int target) {
