@@ -14,7 +14,7 @@ Output: true
 Explanation: There is a cycle in the linked list, where tail connects to the second node.
 ```
 
-![](/assets/101-200/141-problems-1.png)
+![](/assets/101-200/141-problem-1.png)
 
 Example 2:
 
