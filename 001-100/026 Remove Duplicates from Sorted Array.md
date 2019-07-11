@@ -51,21 +51,18 @@ It doesn't matter what values are set beyond the returned length.
 
 ### 3.2
 
-
-
 ```java
     public int removeDuplicates(int[] nums) {
-		if(nums.length==0)
-			return 0;
-		int len = 0;
-		for(int i=1;i<nums.length;i++) {
-			if(nums[i]!=nums[len]) {
-				nums[++len] = nums[i];
-			}
-		}
-		return len+1;
-	}
-}
+        if(nums.length==0)
+            return 0;
+        int len = 0;
+        for(int i=1;i<nums.length;i++) {
+            if(nums[i]!=nums[len]) {
+                nums[++len] = nums[i];
+            }
+        }
+        return len+1;
+    }
 ```
 
 
