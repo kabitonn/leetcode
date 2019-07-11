@@ -1,4 +1,4 @@
-# [217. Contains Duplicate](https://leetcode-cn.com/problems/contains-duplicate/)
+## [217. Contains Duplicate](https://leetcode-cn.com/problems/contains-duplicate/)
 
 ## 1. 题目描述(简单)
 

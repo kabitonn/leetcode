@@ -1,4 +1,4 @@
-# [28. Implement strStr\(\)](https://leetcode-cn.com/problems/implement-strstr/)
+## [28. Implement strStr\(\)](https://leetcode-cn.com/problems/implement-strstr/)
 
 ## 1. 题目描述(简单)
 

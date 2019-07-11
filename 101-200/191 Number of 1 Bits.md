@@ -1,4 +1,4 @@
-# [191. Number of 1 Bits](https://leetcode-cn.com/problems/number-of-1-bits/)
+## [191. Number of 1 Bits](https://leetcode-cn.com/problems/number-of-1-bits/)
 
 ## 1. 题目描述(简单)
 Write a function that takes an unsigned integer and return the number of '1' bits it has (also known as the Hamming weight).

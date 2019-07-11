@@ -1,4 +1,4 @@
-# [Reverse Nodes in k-Group](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/)
+## [Reverse Nodes in k-Group](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/)
 
 ## 1. 题目描述\(困难\)
 

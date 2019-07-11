@@ -1,4 +1,4 @@
-# [242. Valid Anagram](https://leetcode-cn.com/problems/valid-anagram/)
+## [242. Valid Anagram](https://leetcode-cn.com/problems/valid-anagram/)
 
 ## 1. 题目描述(简单)
 

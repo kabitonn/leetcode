@@ -1,4 +1,4 @@
-# [258. Add Digits](https://leetcode-cn.com/problems/add-digits/)
+## [258. Add Digits](https://leetcode-cn.com/problems/add-digits/)
 
 ## 1. 题目描述(简单)
 

@@ -1,4 +1,4 @@
-# [29. Divide Two Integers](https://leetcode-cn.com/problems/divide-two-integers/)
+## [29. Divide Two Integers](https://leetcode-cn.com/problems/divide-two-integers/)
 
 ## 1. 题目描述(中等)
 

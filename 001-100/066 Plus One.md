@@ -1,4 +1,4 @@
-# [66. Plus One](https://leetcode-cn.com/problems/plus-one/)
+## [66. Plus One](https://leetcode-cn.com/problems/plus-one/)
 
 ## 1. 题目描述(简单)
 

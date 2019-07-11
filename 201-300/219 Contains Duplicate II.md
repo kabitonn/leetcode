@@ -1,4 +1,4 @@
-# [219. Contains Duplicate II](https://leetcode-cn.com/problems/contains-duplicate-ii/)
+## [219. Contains Duplicate II](https://leetcode-cn.com/problems/contains-duplicate-ii/)
 
 ## 1. 题目描述(简单)
 

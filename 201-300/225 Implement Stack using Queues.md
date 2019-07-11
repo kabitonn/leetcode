@@ -1,4 +1,4 @@
-# [225. Implement Stack using Queues](https://leetcode-cn.com/problems/implement-stack-using-queues/)
+## [225. Implement Stack using Queues](https://leetcode-cn.com/problems/implement-stack-using-queues/)
 
 ## 1. 题目描述(简单)
 

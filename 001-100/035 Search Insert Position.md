@@ -1,4 +1,4 @@
-# [35. Search Insert Position](https://leetcode-cn.com/problems/search-insert-position/)
+## [35. Search Insert Position](https://leetcode-cn.com/problems/search-insert-position/)
 
 ## 1. 题目描述(简单)
 

@@ -1,4 +1,4 @@
-# [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation/)
+## [31. Next Permutation](https://leetcode-cn.com/problems/next-permutation/)
 
 ## 1. 题目描述(中等)
 

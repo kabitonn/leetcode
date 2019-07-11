@@ -1,5 +1,4 @@
-
-# [100. Same Tree](https://leetcode-cn.com/problems/same-tree/)
+## [100. Same Tree](https://leetcode-cn.com/problems/same-tree/)
 
 ## 1. 题目描述(简单)
 

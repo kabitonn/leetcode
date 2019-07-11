@@ -1,4 +1,4 @@
-# [168. Excel Sheet Column Title](https://leetcode-cn.com/problems/excel-sheet-column-title/)
+## [168. Excel Sheet Column Title](https://leetcode-cn.com/problems/excel-sheet-column-title/)
 
 ## 1. 题目描述(简单)
 

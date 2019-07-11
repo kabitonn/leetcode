@@ -1,4 +1,4 @@
-# [27. Remove Element](https://leetcode-cn.com/problems/remove-element/)
+## [27. Remove Element](https://leetcode-cn.com/problems/remove-element/)
 
 ## 1. 题目描述(简单)
 

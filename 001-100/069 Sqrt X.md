@@ -1,4 +1,4 @@
-# [69. Sqrt(x)](https://leetcode-cn.com/problems/sqrtx/)
+## [69. Sqrt(x)](https://leetcode-cn.com/problems/sqrtx/)
 
 ## 1. 题目描述(简单)
 

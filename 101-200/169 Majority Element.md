@@ -1,4 +1,4 @@
-# [169. Majority Element](https://leetcode-cn.com/problems/majority-element/)
+## [169. Majority Element](https://leetcode-cn.com/problems/majority-element/)
 
 ## 1. 题目描述(简单)
 

@@ -1,4 +1,4 @@
-# [263. Ugly Number](https://leetcode-cn.com/problems/ugly-number/)
+## [263. Ugly Number](https://leetcode-cn.com/problems/ugly-number/)
 
 ## 1. 题目描述(简单)
 

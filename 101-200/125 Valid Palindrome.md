@@ -1,4 +1,4 @@
-# [125. Valid Palindrome](https://leetcode-cn.com/problems/valid-palindrome/)
+## [125. Valid Palindrome](https://leetcode-cn.com/problems/valid-palindrome/)
 
 ## 1. 题目描述(简单)
 

@@ -1,4 +1,4 @@
-# [189. Rotate Array](https://leetcode-cn.com/problems/rotate-array/)
+## [189. Rotate Array](https://leetcode-cn.com/problems/rotate-array/)
 
 ## 1. 题目描述(简单)
 Given an array, rotate the array to the right by k steps, where k is non-negative.

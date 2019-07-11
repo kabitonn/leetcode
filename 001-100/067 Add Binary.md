@@ -1,4 +1,4 @@
-# [67. Add Binary](https://leetcode-cn.com/problems/add-binary/)
+## [67. Add Binary](https://leetcode-cn.com/problems/add-binary/)
 
 ## 1. 题目描述(简单)
 
