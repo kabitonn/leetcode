@@ -146,7 +146,26 @@ Output: [-1,-1]
 
 
 
-### 4. 二分查找细节
+## 4. 二分查找细节
+
+### 4.1 寻找一个数（基本二分搜索）
 
 
+```java
+    public int binarySearch(int[] nums, int target) {
+    	int low = 0;
+        int high = nums.length-1;	//注意
+        while(low<=high) {	//注意
+        	int mid = (low+high)/2;
+        	if(nums[mid]==target) {	return mid;}
+        	else if (nums[mid]>target) {	high = mid - 1;}
+        	else if (nums[mid]<target) {	low = mid + 1;}
+        }
+        return -1;
+    }
+```
+
+
+
+### 4.2 
 
