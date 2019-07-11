@@ -1,6 +1,5 @@
-# [278. First Bad Version](https://leetcode-cn.com/problems/first-bad-version/)
+## [278. First Bad Version](https://leetcode-cn.com/problems/first-bad-version/)
 
-[278. First Bad Version](https://leetcode-cn.com/problems/first-bad-version/)
 
 ## 1. 题目描述(简单)
 
