@@ -29,6 +29,7 @@ Output: [-1,-1]
 ## 3. 解决方法
 
 ### 3.1 一般二分查找+前后遍历
+
 一般二分查找找到相等值索引，前后遍历找到最小最大索引
 
 ```java
@@ -60,7 +61,6 @@ Output: [-1,-1]
 
 修改二分查找，找到和目标值相等的索引最小的值，向后遍历找到索引最大值
 
-
 ```java
     public int[] searchRange(int[] nums, int target) {
         int left = binarySearchMin(nums, target);
@@ -73,23 +73,23 @@ Output: [-1,-1]
         return new int[]{-1,-1};
     }
     public int binarySearchMin(int[] nums, int target) {
-        int low = 0;
-        int high = nums.length-1;
+    	int low = 0;
+        int high = nums.length;
         while(low<high) {
-            int mid = (low+high)/2;
-            if (nums[mid]<target) {    low = mid + 1;}
-            else{    high = mid;}
+        	int mid = (low+high)/2;
+        	if (nums[mid]<target) {	low = mid + 1;}
+			else if(nums[mid]>=target){	high = mid;}
         }
         low = (low<nums.length && nums[low]==target)?low:-1;
         return low;
     }
 	public int binarySearchMax(int[] nums, int target) {
 		int low = 0;
-		int high = nums.length-1;
+		int high = nums.length;
 		while(low<high) {
 			int mid = (low+high)/2;
 			if (nums[mid]<=target) {	low = mid + 1;}
-			else{	high = mid;}
+			else if(nums[mid]>target){	high = mid;}
 		}
 		low = (low>0 && nums[low-1]==target)?low-1:-1;
 		return low;
