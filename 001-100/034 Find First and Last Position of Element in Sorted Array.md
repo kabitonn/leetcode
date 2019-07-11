@@ -113,14 +113,34 @@ Output: [-1,-1]
 
 ### 3.3 二分查找改
 
+```java
+    public int[] searchRange(int[] nums, int target) {
+        int left = binarySearchMin(nums, target);
+        int right = binarySearchMax(nums, target);
 
-
-```
-	public int[] searchRange(int[] nums, int target) {
-		int left = binarySearchMin(nums, target);
-		int right = binarySearchMax(nums, target);
-
-		return new int[]{left,right};
+        return new int[]{left,right};
+    }
+        public int binarySearchMin(int[] nums, int target) {
+    	int low = 0;
+        int high = nums.length;	//注意
+        while(low<high) {	//注意
+        	int mid = (low+high)/2;
+        	if (nums[mid]<target) {	low = mid + 1;}
+			else if(nums[mid]>=target){	high = mid;}//注意
+        }
+        low = (low<nums.length && nums[low]==target)?low:-1;
+        return low;
+    }
+	public int binarySearchMax(int[] nums, int target) {
+		int low = 0;
+		int high = nums.length;	//注意
+		while(low<high) {	//注意
+			int mid = (low+high)/2;
+			if (nums[mid]<=target) {	low = mid + 1;}//注意
+			else if(nums[mid]>target){	high = mid;}//注意
+		}
+		low = (low>0 && nums[low-1]==target)?low-1:-1;
+		return low;
 	}
 ```
 
