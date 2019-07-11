@@ -1,4 +1,4 @@
-# [22. Generate Parentheses](https://leetcode-cn.com/problems/generate-parentheses/)
+## [22. Generate Parentheses](https://leetcode-cn.com/problems/generate-parentheses/)
 
 ## 1. 题目描述(中等)
 

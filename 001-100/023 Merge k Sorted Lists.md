@@ -1,4 +1,4 @@
-# [23. Merge k Sorted Lists](https://leetcode-cn.com/problems/merge-k-sorted-lists/)
+## [23. Merge k Sorted Lists](https://leetcode-cn.com/problems/merge-k-sorted-lists/)
 
 ## 1. 题目描述(困难)
 
