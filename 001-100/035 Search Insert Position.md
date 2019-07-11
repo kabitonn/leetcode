@@ -56,22 +56,21 @@ Output: 0
 
 ### 3.2 二分查找
 
+插入在相等值的左边，所以查找左边界，存在相等即为左边界，不存在即为小于里的最大值，low==nums.length，即为nums小于target
+
 ```java
     public int searchInsert(int[] nums, int target) {
         int low = 0;
-        int high = nums.length-1;
+        int high = nums.length;
         while(low<high) {
             int mid = (low+high)/2;
             if(nums[mid]==target) {    high = mid;    }
             else if(nums[mid]<target) {    low = mid+1;}
             else if(nums[mid]>target) {    high = mid;    }
         }
-        low = (nums[low]<target)?low+1:low;
         return low;
     }
 ```
-
-
 
 
 
