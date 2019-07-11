@@ -80,7 +80,6 @@ Output: -1
 
 ### 3.3 BF
 
-
 ```java
     public int strStr(String haystack, String needle) {
     	char[] hayArr = haystack.toCharArray();
