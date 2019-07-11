@@ -264,6 +264,7 @@ while\(left &lt; right\)终止的条件是 left == right，此时搜索区间 \[
     while (left < right) {
         // ...
     }
+    // target 比所有数都小
     if (left == 0) return -1;
     return nums[left-1] == target ? (left-1) : -1;
 ```
