@@ -29,7 +29,7 @@ It doesn't matter what values are set beyond the returned length.
 ## 2. 思路
 
 1. 有序数组，和前者一样即为重复
-2. 和
+2. 和每次第一个不重复的值比较，不一样对有效索引递增
 
 ## 3. 解决方法
 
@@ -39,13 +39,13 @@ It doesn't matter what values are set beyond the returned length.
     public int removeDuplicates(int[] nums) {
         if(nums.length==0)
             return 0;
-        int len = 1;
+        int len = 0;
         for(int i=1;i<nums.length;i++) {
             if(nums[i]!=nums[i-1]) {
-                nums[len++] = nums[i];
+                nums[++len] = nums[i];
             }
         }
-        return len-1;
+        return len+1;
     }
 ```
 
