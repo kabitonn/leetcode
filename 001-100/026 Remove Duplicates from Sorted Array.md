@@ -28,6 +28,9 @@ It doesn't matter what values are set beyond the returned length.
 
 ## 2. 思路
 
+1. 有序数组，和前者一样即为重复
+2. 和
+
 ## 3. 解决方法
 
 ### 3.1
@@ -47,6 +50,23 @@ It doesn't matter what values are set beyond the returned length.
 ```
 
 ### 3.2
+
+
+
+```java
+    public int removeDuplicates(int[] nums) {
+		if(nums.length==0)
+			return 0;
+		int len = 0;
+		for(int i=1;i<nums.length;i++) {
+			if(nums[i]!=nums[len]) {
+				nums[++len] = nums[i];
+			}
+		}
+		return len+1;
+	}
+}
+```
 
 
 
