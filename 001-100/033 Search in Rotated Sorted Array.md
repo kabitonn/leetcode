@@ -34,15 +34,42 @@ Output: -1
 
 ```java
     public int search(int[] nums, int target) {
-    	for(int i=0;i<nums.length;i++) {
-    		if(nums[i]==target)
-    			return i;
-    	}
+        for(int i=0;i<nums.length;i++) {
+            if(nums[i]==target)
+                return i;
+        }
         return -1;
     }
 ```
 
-### 3.2
+### 3.2 
+
+```java
+	public int search(int[] nums, int target) {
+		int low = 0;
+		int high = nums.length-1;
+		while(low<=high) {
+			int mid = (low+high)/2;
+			int num ;
+			if((nums[mid]<nums[0])==(target<nums[0])) {
+				num = nums[mid];
+			}
+			else {
+				num = nums[0]>target?Integer.MIN_VALUE:Integer.MAX_VALUE;
+			}
+			if(num>target) {
+				high = mid-1;
+			}
+			else if (num<target) {
+				low = mid+1;
+			}
+			else {
+				return mid;
+			}
+		}
+        return -1;
+    }
+```
 
 
 
