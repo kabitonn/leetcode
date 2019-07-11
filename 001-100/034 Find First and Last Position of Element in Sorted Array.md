@@ -111,5 +111,18 @@ Output: [-1,-1]
     }
 ```
 
+### 3.3 二分查找改
+
+
+
+```
+	public int[] searchRange(int[] nums, int target) {
+		int left = binarySearchMin(nums, target);
+		int right = binarySearchMax(nums, target);
+
+		return new int[]{left,right};
+	}
+```
+
 
 
