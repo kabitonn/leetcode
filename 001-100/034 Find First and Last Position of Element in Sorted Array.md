@@ -83,16 +83,17 @@ Output: [-1,-1]
         low = (low<nums.length && nums[low]==target)?low:-1;
         return low;
     }
-	public int[] searchRange(int[] nums, int target) {
-		int right = binarySearchMin(nums, target);
-		if(right!=-1) {
-			int start = right;
-			int end = start;
-			while(start>0 && nums[start-1]==target) {start--;}
-			return new int[] {start,end};
-		}
-		return new int[]{-1,-1};
-	}
+    
+    public int[] searchRange(int[] nums, int target) {
+        int right = binarySearchMin(nums, target);
+        if(right!=-1) {
+            int start = right;
+            int end = start;
+            while(start>0 && nums[start-1]==target) {start--;}
+            return new int[] {start,end};
+        }
+        return new int[]{-1,-1};
+    }
     public int binarySearchMax(int[] nums, int target) {
         int low = 0;
         int high = nums.length;
