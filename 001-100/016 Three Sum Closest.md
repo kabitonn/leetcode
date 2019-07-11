@@ -13,13 +13,13 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 
 ## 2. 思路
 
-1. 数组排序
+1. 遍历所有三者之和，求出与目标差值，求最小值
+   1. 对排序数组可改进，若当前差值已大于当前循环最小值，可跳出该层循环
+2. 数组排序，选定一个元素，头尾双指针遍历
 
 ## 3. 解决方法
 
 ### 3.1 暴力遍历
-
-
 
 ```java
     public int threeSumClosest(int[] nums, int target) {
@@ -28,16 +28,16 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
         int min = Integer.MAX_VALUE;
         int res = target;
         for(int i=0;i<len-2;i++) {
-        	for(int j=i+1;j<len-1;j++) {
-        		for(int k=j+1;k<len;k++) {
-        			int sum = nums[i]+nums[j]+nums[k];
-        			int dif = Math.abs(sum-target);
-        			if(dif<min) {
-        				min = dif;
-        				res = sum;
-        			}
-        		}
-        	}
+            for(int j=i+1;j<len-1;j++) {
+                for(int k=j+1;k<len;k++) {
+                    int sum = nums[i]+nums[j]+nums[k];
+                    int dif = Math.abs(sum-target);
+                    if(dif<min) {
+                        min = dif;
+                        res = sum;
+                    }
+                }
+            }
         }
         return res;
     }

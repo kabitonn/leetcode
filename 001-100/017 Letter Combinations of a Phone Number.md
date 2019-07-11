@@ -15,14 +15,18 @@ Input: "23"
 Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 ```
 
-**Note**:  
+**Note**:
+
 > Although the above answer is in lexicographical order, your answer could be in any order you want.
 
 ## 2. 思路
 
+1. 针对当前数字对应的所有字符，添加在list已有字符串
+2. 利用队列对当前头部字符串添加当前数字对应所有字符
+
 ## 3. 解决方法
 
-### 3.1
+### 3.1迭代
 
 ```java
     public List<String> letterCombinations(String digits) {
@@ -54,7 +58,7 @@ Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
     }
 ```
 
-### 3.2
+### 3.2 队列迭代
 
 ```java
     private String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
@@ -75,7 +79,7 @@ Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
     }
 ```
 
-### 3.3
+### 3.3 递归
 
 ```java
     private String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
