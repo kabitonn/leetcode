@@ -144,69 +144,65 @@ Output: [-1,-1]
     }
 ```
 
-
-
 ## 4. 二分查找细节
 
 ### 4.1 寻找一个数（基本二分搜索）
 
 搜索一个数，如果存在，返回其索引，否则返回 -1
+
 ```java
     public int binarySearch(int[] nums, int target) {
-    	int left = 0;
-        int right = nums.length-1;	//注意
-        while(left<=right) {	//注意
-        	int mid = (left+right)/2;
-        	if(nums[mid]==target) {	return mid;}
-        	else if (nums[mid]>target) {	right = mid - 1;}
-        	else if (nums[mid]<target) {	left = mid + 1;}
+        int left = 0;
+        int right = nums.length-1;    //注意
+        while(left<=right) {    //注意
+            int mid = (left+right)/2;
+            if(nums[mid]==target) {    return mid;}
+            else if (nums[mid]>target) {    right = mid - 1;}
+            else if (nums[mid]<target) {    left = mid + 1;}
         }
         return -1;
     }
 ```
-1. 为什么 while 循环的条件中是 <=，而不是 < ？
+
+1. 为什么 while 循环的条件中是 &lt;=，而不是 &lt; ？
 
 答：因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。
 
-这二者可能出现在不同功能的二分查找中，区别是：前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right)，因为索引大小为 nums.length 是越界的。
+这二者可能出现在不同功能的二分查找中，区别是：前者相当于两端都闭区间 \[left, right\]，后者相当于左闭右开区间 \[left, right\)，因为索引大小为 nums.length 是越界的。
 
-我们这个算法中使用的是前者 [left, right] 两端都闭的区间。这个区间其实就是每次进行搜索的区间，我们不妨称为「搜索区间」
+我们这个算法中使用的是前者 \[left, right\] 两端都闭的区间。这个区间其实就是每次进行搜索的区间，我们不妨称为「搜索区间」
 
-为什么 left = mid + 1，right = mid - 1？我看有的代码是 right = mid或者 left = mid`，没有这些加加减减，到底怎么回事，怎么判断？
+为什么 left = mid + 1，right = mid - 1？我看有的代码是 right = mid或者 left = mid\`，没有这些加加减减，到底怎么回事，怎么判断？
 
 答：这也是二分查找的一个难点，不过只要你能理解前面的内容，就能够很容易判断。
 
-刚才明确了「搜索区间」这个概念，而且本算法的搜索区间是两端都闭的，即 [left, right]。那么当我们发现索引 mid 不是要找的 target 时，如何确定下一步的搜索区间呢？
+刚才明确了「搜索区间」这个概念，而且本算法的搜索区间是两端都闭的，即 \[left, right\]。那么当我们发现索引 mid 不是要找的 target 时，如何确定下一步的搜索区间呢？
 
-当然是 [left, mid - 1] 或者 [mid + 1, right] 对不对？因为 mid 已经搜索过，应该从搜索区间中去除。
-
-
-
+当然是 \[left, mid - 1\] 或者 \[mid + 1, right\] 对不对？因为 mid 已经搜索过，应该从搜索区间中去除。
 
 ### 4.2 寻找左侧边界的二分搜索
 
-
-
 ```java
     public int binarySearchMin(int[] nums, int target) {
-    	int left = 0;
-        int right = nums.length;	//注意
-        while(left<right) {	//注意
-        	int mid = (left+right)/2;
-        	if (nums[mid]<target) {	left = mid + 1;}
-			else if(nums[mid]>=target){	right = mid;}//注意
+        int left = 0;
+        int right = nums.length;    //注意
+        while(left<right) {    //注意
+            int mid = (left+right)/2;
+            if (nums[mid]<target) {    left = mid + 1;}
+            else if(nums[mid]>=target){    right = mid;}//注意
         }
         left = (left<nums.length && nums[left]==target)?left:-1;
         return left;
     }
 ```
-1. 为什么 while(left < right) 而不是 <= ?
 
-答：用相同的方法分析，因为 right = nums.length 而不是 nums.length - 1。因此每次循环的「搜索区间」是 [left, right) 左闭右开。
+1. 为什么 while\(left &lt; right\) 而不是 &lt;= ?
 
-while(left < right)终止的条件是 left == right，此时搜索区间 [left, left) 为空，所以可以正确终止。
+答：用相同的方法分析，因为 right = nums.length 而不是 nums.length - 1。因此每次循环的「搜索区间」是 \[left, right\) 左闭右开。
 
-2. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
+while\(left &lt; right\)终止的条件是 left == right，此时搜索区间 \[left, left\) 为空，所以可以正确终止。
+
+1. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
 
 ```java
     while (left < right) {
@@ -216,21 +212,22 @@ while(left < right)终止的条件是 left == right，此时搜索区间 [left, 
     if (left == nums.length) return -1;
     // 类似之前算法的处理方式
     return nums[left] == target ? left : -1;
-
 ```
 
-3. 为什么 left = mid + 1，right = mid ？和之前的算法不一样？
+1. 为什么 left = mid + 1，right = mid ？和之前的算法不一样？
 
-答：这个很好解释，因为我们的「搜索区间」是 (left, right) 左闭右开，所以当 nums[mid] 被检测之后，下一步的搜索区间应该去掉 mid 分割成两个区间，即 [left, mid) 或 [mid + 1, right)。
+答：这个很好解释，因为我们的「搜索区间」是 \(left, right\) 左闭右开，所以当 nums\[mid\] 被检测之后，下一步的搜索区间应该去掉 mid 分割成两个区间，即 \[left, mid\) 或 \[mid + 1, right\)。  
 4. 为什么该算法能够搜索左侧边界？
 
-答：关键在于对于 nums[mid] == target 这种情况的处理：
+答：关键在于对于 nums\[mid\] == target 这种情况的处理：
+
 ```java
     if (nums[mid] == target){
         right = mid;
     }
 ```
-可见，找到 target 时不要立即返回，而是缩小「搜索区间」的上界 right，在区间 (left, mid)中继续搜索，即不断向左收缩，达到锁定左侧边界的目的
+
+可见，找到 target 时不要立即返回，而是缩小「搜索区间」的上界 right，在区间 \(left, mid\)中继续搜索，即不断向左收缩，达到锁定左侧边界的目的  
 5. 为什么返回 left 而不是 right？
 
 答：都是一样的，因为 while 终止的条件是 left == right。
@@ -238,31 +235,30 @@ while(left < right)终止的条件是 left == right，此时搜索区间 [left, 
 ### 4.3 寻找右侧边界的二分查找
 
 ```java
-	public int binarySearchMax(int[] nums, int target) {
-		int left = 0;
-		int right = nums.length;	//注意
-		while(left<right) {	//注意
-			int mid = (left+right)/2;
-			if (nums[mid]<=target) {	left = mid + 1;}//注意
-			else if(nums[mid]>target){	right = mid;}//注意
-		}
-		left = (left>0 && nums[left-1]==target)?left-1:-1;
-		return left;
-	}
+    public int binarySearchMax(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length;    //注意
+        while(left<right) {    //注意
+            int mid = (left+right)/2;
+            if (nums[mid]<=target) {    left = mid + 1;}//注意
+            else if(nums[mid]>target){    right = mid;}//注意
+        }
+        left = (left>0 && nums[left-1]==target)?left-1:-1;
+        return left;
+    }
 ```
+
 1. 为什么这个算法能够找到右侧边界？
 
 答：类似地，关键点还是这里：
-
-
 
 ```Java
     if (nums[mid] == target) {
         left = mid + 1;
     }
 ```
-2. 返回 -1−1 的操作？如果 nums 中不存在 target 这个值，怎么办？
 
+1. 返回 -1−1 的操作？如果 nums 中不存在 target 这个值，怎么办？
 
 ```java
     while (left < right) {
@@ -270,6 +266,7 @@ while(left < right)终止的条件是 left == right，此时搜索区间 [left, 
     }
     if (left == 0) return -1;
     return nums[left-1] == target ? (left-1) : -1;
-
 ```
+
+
 
