@@ -22,9 +22,14 @@ Explanation: There is no common prefix among the input strings.
 ```
 
 **Note:**
+
 > All given inputs are in lowercase letters a-z
 
 ## 2. 思路
+
+1. 对所有字符串从第一列开始比较
+2. 前一个依次和后一个求LCP，
+3. 递归，两个两个分别求LCP
 
 ## 3. 解决方法
 
