@@ -25,6 +25,34 @@ Output: [-1,-1]
 
 ### 3.1 
 
+
+```java
+    public int[] searchRange(int[] nums, int target) {
+    	int position = binarySearch(nums, target);
+    	if(position!=-1) {
+    		int start = position;
+    		int end = position;
+    		while(start>0 && nums[start-1]==target) {start--;}
+    		while(end<nums.length-1 && nums[end+1]==target) {end++;}
+    		return new int[] {start,end};
+    	}
+        return new int[]{-1,-1};
+    }    
+    public int binarySearch(int[] nums, int target) {
+    	int low = 0;
+        int high = nums.length-1;
+        while(low<=high) {
+        	int mid = (low+high)/2;
+        	if(nums[mid]==target) {	return mid;}
+        	else if (nums[mid]>target) {	high = mid - 1;}
+        	else if (nums[mid]<target) {	low = mid + 1;}
+        }
+        return -1;
+    }
+```
+
+
+
 ### 3.2
 
 
