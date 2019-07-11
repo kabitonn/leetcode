@@ -198,11 +198,11 @@ Output: [-1,-1]
 
 1. 为什么 while\(left &lt; right\) 而不是 &lt;= ?
 
-* 答：用相同的方法分析，因为 right = nums.length 而不是 nums.length - 1。因此每次循环的「搜索区间」是 \[left, right\) 左闭右开。
+2. 答：用相同的方法分析，因为 right = nums.length 而不是 nums.length - 1。因此每次循环的「搜索区间」是 \[left, right\) 左闭右开。
 
 while\(left &lt; right\)终止的条件是 left == right，此时搜索区间 \[left, left\) 为空，所以可以正确终止。
 
-2. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
+1. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
 
 ```java
     while (left < right) {
@@ -214,7 +214,7 @@ while\(left &lt; right\)终止的条件是 left == right，此时搜索区间 \[
     return nums[left] == target ? left : -1;
 ```
 
-3. 为什么 left = mid + 1，right = mid ？和之前的算法不一样？
+1. 为什么 left = mid + 1，right = mid ？和之前的算法不一样？
 
 答：这个很好解释，因为我们的「搜索区间」是 \(left, right\) 左闭右开，所以当 nums\[mid\] 被检测之后，下一步的搜索区间应该去掉 mid 分割成两个区间，即 \[left, mid\) 或 \[mid + 1, right\)。  
 4. 为什么该算法能够搜索左侧边界？
@@ -252,13 +252,13 @@ while\(left &lt; right\)终止的条件是 left == right，此时搜索区间 \[
 
 答：类似地，关键点还是这里：
 
-```Java
+```java
     if (nums[mid] == target) {
         left = mid + 1;
     }
 ```
 
-2. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
+1. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
 
 ```java
     while (left < right) {
