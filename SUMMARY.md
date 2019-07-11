@@ -115,13 +115,13 @@
   * [409. Longest Palindrome(E)](/401-500/409 Longest Palindrome.md)
   * [412. Fizz Buzz(E)](/401-500/412 Fizz Buzz.md)
   * [414. Third Maximum Number(E)](/401-500/414 Third Maximum Number.md)
-  * [415. (E)](/401-500/415 .md)
-  * [429. (E)](/401-500/429 .md)
-  * [434. (E)](/401-500/434 .md)
-  * [437. (E)](/401-500/437 .md)
-  * [438. (E)](/401-500/438 .md)
-  * [441. (E)](/401-500/441 .md)
-  * [443. (E)](/401-500/443 .md)
+  * [415. Add Strings(E)](/401-500/415 Add Strings.md)
+  * [429. N-ary Tree Level Order Traversal(E)](/401-500/429 N-ary Tree Level Order Traversal.md)
+  * [434. Number of Segments in a String(E)](/401-500/434 Number of Segments in a String.md)
+  * [437. Path Sum III(E)](/401-500/437 Path Sum III.md)
+  * [438. Find All Anagrams in a String(E)](/401-500/438 Find All Anagrams in a String.md)
+  * [441. Arranging Coins(E)](/401-500/441 Arranging Coins.md)
+  * [443. String Compression(E)](/401-500/443 String Compression.md)
 
 
 
