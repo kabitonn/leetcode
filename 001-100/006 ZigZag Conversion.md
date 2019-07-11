@@ -22,6 +22,7 @@ Example 1:
 > Output: "PAHNAPLSIIGYIR"
 
 Example 2:
+
 ```
 Input: s = "PAYPALISHIRING", numRows = 4  
 Output: "PINALSIGYAHRPI"  
@@ -72,29 +73,28 @@ P     I
 
 找出按 Z 形排列后字符的规律，然后直接保存起来。
 
+![](/assets/001-100/006-solution-2-1.png)
 
 ```java
     public String convert1(String s, int numRows) {
-    	if(numRows==1)
-    		return s;
-    	int len = s.length();
-    	int cycle = 2*numRows-2;
-    	StringBuilder stringBuilder = new StringBuilder();
-    	for(int i=0;i<numRows;i++) {
-    		for(int j=0;j+i<len;j+=cycle) {
-    			stringBuilder.append(s.charAt(j+i));
-    			if(i!=0&&i!=numRows-1&&j+cycle-i<len) {
-    				stringBuilder.append(s.charAt(j+cycle-i));
-    			}
-    		}
-    	}
-    	return stringBuilder.toString();
+        if(numRows==1)
+            return s;
+        int len = s.length();
+        int cycle = 2*numRows-2;
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i=0;i<numRows;i++) {
+            for(int j=0;j+i<len;j+=cycle) {
+                stringBuilder.append(s.charAt(j+i));
+                if(i!=0&&i!=numRows-1&&j+cycle-i<len) {
+                    stringBuilder.append(s.charAt(j+cycle-i));
+                }
+            }
+        }
+        return stringBuilder.toString();
     }
-
 ```
+
 时间复杂度：$$O(n)$$，虽然是两层循环，但第二次循环每次加的是 cycleLen ，无非是把每个字符遍历了 1 次，所以两层循环内执行的次数肯定是字符串的长度。
 
 空间复杂度：$$O(n)$$，保存字符串。
-
-
 
