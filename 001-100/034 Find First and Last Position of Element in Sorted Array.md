@@ -83,7 +83,11 @@ Output: [-1,-1]
         low = (low<nums.length && nums[low]==target)?low:-1;
         return low;
     }
-    
+```
+
+
+
+```java
     public int[] searchRange(int[] nums, int target) {
         int right = binarySearchMin(nums, target);
         if(right!=-1) {
