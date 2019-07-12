@@ -53,7 +53,7 @@
   * [112. Path Sum\(E\)](/101-200/112 Path Sum.md)
   * [118. Pascal's Triangle\(E\)](/101-200/118 Pascal Triangle.md)
   * [119. Pascal's Triangle II\(E\)](/101-200/119 Pascal Triangle II.md)
-  * [121. Best Time to Buy and Sell Stock\(E\)](/101-200/121 Best Time to Buy and Sell Stock.md)
+  * [118. Pascal's Triangle\(E\)](/101-200/118 Pascal Triangle.md)
   * [122. Best Time to Buy and Sell Stock II\(E\)](/101-200/122 Best Time to Buy and Sell Stock II.md)
   * [125. Valid Palindrome\(E\)](/101-200/125 Valid Palindrome.md)
   * [136. Single Number\(E\)](/101-200/136 Single Number.md)
@@ -121,6 +121,4 @@
   * [438. Find All Anagrams in a String\(E\)](/401-500/438 Find All Anagrams in a String.md)
   * [441. Arranging Coins\(E\)](/401-500/441 Arranging Coins.md)
   * [443. String Compression\(E\)](/401-500/443 String Compression.md)
-
-
 
