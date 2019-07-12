@@ -47,9 +47,11 @@ rotate 2 steps to the right: [3,99,-1,-100]
         }
     }
 ```
+时间复杂度：$$O(n*k)$$。每个元素都被移动 1 步$$O(n)$$ k次$$O(k)$$） 。
+空间复杂度：$$O(1)$$ 。没有额外空间被使用。
 
 
-### 3.2 三次逆序
+### 3.2 三次反转
 
 ```java
    public void rotate(int[] nums, int k) {
@@ -70,12 +72,12 @@ rotate 2 steps to the right: [3,99,-1,-100]
     	}
     }
 ```
-### 3.3 一次旋转k位
+### 3.3 环状替换
 
 
 ```java
-	public void rotate(int[] nums,int k) {
-		int len = nums.length;
+    public void rotate(int[] nums,int k) {
+	int len = nums.length;
         k%=len;
         if(len == 0||k==0) {return;}
         int count = 0;
@@ -90,7 +92,7 @@ rotate 2 steps to the right: [3,99,-1,-100]
                 count++;
             } while (start != current);
         }
-	}
+    }
 ```
 
 
