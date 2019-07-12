@@ -62,7 +62,7 @@ Output: false
 
 ### 3.2 迭代
 
-自定义站
+自定义栈
 
 ```java
 	public boolean isSameTree(TreeNode p, TreeNode q) {
