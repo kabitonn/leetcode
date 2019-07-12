@@ -18,14 +18,28 @@ Output: [1,2,2,3,5,6]
 ```
 
 ## 2. 思路
+1. 后序插入以节省空间
 
 ## 3. 解决方法
 
 ### 3.1
+后序选择大者插入
 
-
-
-### 3.2
+```java
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    	int i=m-1;
+    	int j=n-1;
+    	int k=m+n-1;
+    	while(j>=0) {
+    		if(i>=0&&nums1[i]>nums2[j]) {
+    			nums1[k--]=nums1[i--];
+    		}
+    		else {
+    			nums1[k--]=nums2[j--];
+    		}
+    	}
+    }
+```
 
 
 
