@@ -72,7 +72,15 @@ Follow up:
 空间复杂度：$$O(1)$$。
 
 
-### 3.3 折半
+### 3.3 折半分治
+
+1. 终止条件：left == right，那么 maxSubArrayPart 直接返回 nums [ left] 
+2. 问题分解
+    1. mid 不在我们要找的子数组中
+        - 子数组的最大值要么是 mid 左半部分数组的子数组产生，要么是右边的产生，最大值的可以利用 maxSubArrayPart 求出来
+    2. mid 在我们要找的子数组中
+        - 我们可以分别从 mid 左边扩展，和右边扩展，找出两边和最大的时候，然后加起来就可以了。当然如果，左边或者右边最大的都小于 0 ，我们就不加了
+
 
 ```java
     public int maxSubArray(int[] nums) {
@@ -114,6 +122,6 @@ Follow up:
         return leftSum+rightSum;
     }
 ```
-
+时间复杂度：$$O(n log ( n ))$$
 
 
