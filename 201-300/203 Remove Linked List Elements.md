@@ -43,6 +43,7 @@ Output: 1->2->3->4->5
         while(head!=null&&head.val==val){
             head = head.next;
         }
+        if(head==null){return head;}
         ListNode prev = head;
         while(prev.next!=null){
             if(prev.next.val==val){
