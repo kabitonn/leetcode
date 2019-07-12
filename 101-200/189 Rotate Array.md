@@ -64,11 +64,11 @@ rotate 2 steps to the right: [3,99,-1,-100]
     }
     public void reverse(int[] nums, int i,int j) {
     	while(i<j) {
-    		int tmp = nums[i];
-    		nums[i] = nums[j];
-    		nums[j] = tmp;
-    		i++;
-    		j--;
+		int tmp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = tmp;
+		i++;
+		j--;
     	}
     }
 ```
