@@ -46,7 +46,8 @@ Output: false
 ## 3. 解决方法
 
 ### 3.1 递归
-
+只要把两个树同时遍历一下，遍历过程中判断数值是否相等或者同时为 null 即可
+而遍历的方法，当然可以选择 DFS 里的先序遍历，中序遍历，后序遍历，或者 BFS。
 
 ```java
 	public boolean isSameTree(TreeNode p, TreeNode q) {
