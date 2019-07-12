@@ -33,12 +33,23 @@ Output: 701
 
 
 ## 2. 思路
+26进制转10进制
 
 ## 3. 解决方法
 
 ### 3.1
 
+```java
+    public int titleToNumber(String s) {
+        int num = 0;
+    	for(char c:s.toCharArray()) {
+        	int n = c-'A'+1;
+        	num = num*26+n;
+        }
+    	return num;
+    }
+```
 
 
-### 3.2
+
 
