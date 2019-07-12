@@ -21,7 +21,9 @@ Explanation: The square root of 8 is 2.82842..., and since
              the decimal part is truncated, 2 is returned.
 ```
 ## 2. 思路
-
+1. 遍历
+2. 二分
+3. 牛顿法
 ## 3. 解决方法
 
 ### 3.1
@@ -29,4 +31,18 @@ Explanation: The square root of 8 is 2.82842..., and since
 
 
 ### 3.2
+
+### 3.3 
+
+$$x_{k+1}$$
+
+```java
+    public int mySqrt(int x) {
+        long a = x;
+        while (a * a > x) {
+            a = (a + x / a) / 2;
+        }
+        return (int) a;
+    }
+```
 
