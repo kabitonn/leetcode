@@ -28,6 +28,28 @@ Output:
 
 ### 3.1
 
+
+```java 
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> lists = new ArrayList<>();
+        if(numRows == 0) {return lists;}
+        List<Integer> firstLine = new ArrayList<>();
+        firstLine.add(1);
+        lists.add(firstLine);
+        for(int i=1;i<numRows;i++) {
+        	List<Integer> preLine = lists.get(i-1);
+        	List<Integer> line = new ArrayList<>();
+        	line.add(1);
+        	for(int j=1;j<i;j++) {
+        		line.add(preLine.get(j-1)+preLine.get(j));
+        	}
+        	line.add(1);
+        	lists.add(line);
+        }
+        return lists;
+    }
+```
+
 ### 3.2
 
 
