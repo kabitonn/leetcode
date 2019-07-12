@@ -44,7 +44,7 @@ Follow up:
 
 
 ```java
-	public int maxSubArray2(int[] nums) {
+	public int maxSubArray(int[] nums) {
         int sum=0;
         int maxSum = Integer.MIN_VALUE;
         for(int num:nums){
