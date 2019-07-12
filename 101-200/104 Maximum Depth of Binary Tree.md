@@ -23,11 +23,42 @@ return its depth = 3.
 
 ## 2. 思路
 
+1. 递归
+2. 迭代
+
 ## 3. 解决方法
 
-### 3.1
+### 3.1 递归
+DFS深度遍历
+
+```java
+    public int maxDepth(TreeNode p) {
+    	if(p==null) {return 0;}
+        return 1+Math.max(maxDepth(p.left),maxDepth(p.right));
+    }
+```
 
 
+### 3.2 迭代
 
-### 3.2
+
+```java
+    public int maxDepth1(TreeNode root) {
+    	if(root==null) {return 0;}
+        Deque<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int depth = 0;
+        while(!queue.isEmpty()) {
+        	int size = queue.size();
+        	depth++;
+        	for(int i=0;i<size;i++) {
+        		TreeNode pNode = queue.poll();
+        		if(pNode.left!=null) {queue.add(pNode.left);}
+        		if(pNode.right!=null) {queue.add(pNode.right);}
+        	}
+        }
+        return depth;
+    }
+```
+
 
