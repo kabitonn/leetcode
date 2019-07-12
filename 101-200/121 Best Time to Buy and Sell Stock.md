@@ -25,8 +25,8 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 ## 2. 思路
 
-1. 遍历
-2. 动态规划
+1. 二次遍历
+2. 一次遍历 动态规划
 
 ## 3. 解决方法
 
