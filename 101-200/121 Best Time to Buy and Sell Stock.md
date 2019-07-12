@@ -30,7 +30,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 ## 3. 解决方法
 
-### 3.1 遍历
+### 3.1 二次遍历
 遍历所有情况，求出最大利益
 
 ```java
@@ -50,7 +50,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 空间复杂度：$$O(1)$$
 
 
-### 3.2 动态规划
+### 3.2 一次遍历 动态规划
 正向遍历，保存当前最小值，计算最大利益
 
 ```java
