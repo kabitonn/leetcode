@@ -27,8 +27,9 @@ But the following [1,2,2,null,3,null,3] is not:
 
 
 ## 2. 思路
-1.递归
-2.迭代
+1. 递归
+2. 迭代
+3. 层次遍历回文序列
 
 ## 3. 解决方法
 
@@ -77,7 +78,7 @@ But the following [1,2,2,null,3,null,3] is not:
 ```
 
 ### 3.3 层次遍历回文
-
+每层的遍历结果是回文序列
 
 ```java
     public boolean isSymmetric(TreeNode root) {
@@ -97,7 +98,6 @@ But the following [1,2,2,null,3,null,3] is not:
 				}
         	}
         	for(int i=0,j=line.size()-1;i<j;i++,j--) {
-        		//if(line.get(i)==null&&line.get(j)==null) {continue;}
         		if(line.get(i)!=line.get(j)) {return false;}
         	}
         }
