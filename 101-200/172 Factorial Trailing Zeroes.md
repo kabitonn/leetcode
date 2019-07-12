@@ -22,12 +22,34 @@ Explanation: 5! = 120, one trailing zero.
 
 
 ## 2. 思路
+组成阶乘的数中共有多少对 2 和 5 的组合即可。又因为 5 的个数一定比 2 少，问题简化为计算 5 的个数
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 迭代
+
+
+```java
+    public int trailingZeroes(int n) {
+    	int count = 0;
+    	while(n/5!=0) {
+    		count += n/5;
+    		n/=5;
+    	}
+    	return count;
+    }
+```
 
 
 
-### 3.2
+### 3.2 递归
+
+
+```java
+    public int trailingZeroes(int n) {
+		return n == 0 ? 0 : n / 5 + trailingZeroes(n / 5);
+	}
+```
+
+
 
