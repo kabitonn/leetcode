@@ -57,7 +57,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 ### 3.2 峰谷法
 数学语言：
-$$TotalProfit = sum$$
+$$TotalProfit = \sum_i(height(peak_i) - height(valley_i)) $$
 
 ```java
     public int maxProfit(int[] prices) {
