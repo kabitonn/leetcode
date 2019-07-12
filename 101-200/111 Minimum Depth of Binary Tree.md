@@ -28,7 +28,7 @@ return its minimum depth = 2.
 
 ## 3. 解决方法
 
-### 3.1 递归
+### 3.1 递归DFS
 
 
 ```java
@@ -40,8 +40,71 @@ return its minimum depth = 2.
 		return 1+Math.min(minDepth(p.left), minDepth(p.right));
     }
 ```
+时间复杂度：$$O(n)$$，因为我们遍历整个输入树一次，所以总的运行时间为 $$O(n)$$，其中 nn 是树中结点的总数。
+空间复杂度：递归调用的次数受树的高度限制。在最糟糕情况下，树是线性的，其高度为 $$O(n)$$。因此，在最糟糕的情况下，由栈上的递归调用造成的空间复杂度为$$ O(n)$$。
 
 
 
-### 3.2 迭代
+### 3.2 迭代DFS
+
+
+```java
+    public int minDepth(TreeNode root) {
+    	if(root==null) {return 0;}
+        Deque<TreeNode> stack = new LinkedList<>();
+        Deque<Integer> value = new LinkedList<>();
+        stack.push(root);
+        value.push(1);
+        int depth = Integer.MAX_VALUE;
+        while(!stack.isEmpty()) {
+        	TreeNode pNode = stack.pop();
+        	int curDepth = value.pop();
+        	if(pNode.left==null&&pNode.right==null) {
+        		depth = Math.min(depth, curDepth);
+        	}
+        	else {
+        		if(pNode.left!=null) {
+        			stack.push(pNode.left);
+        			value.push(1+curDepth);
+        		}
+        		if(pNode.right!=null) {
+        			stack.push(pNode.right);
+        			value.push(1+curDepth);
+        		}
+			}
+        	
+        }
+        return depth;
+    }
+```
+
+### 3.3 迭代BFS
+
+
+```java
+    public int minDepth(TreeNode root) {
+    	if(root==null) {return 0;}
+        Deque<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int depth = 0;
+        while(!queue.isEmpty()) {
+        	int size = queue.size();
+        	depth++;
+        	for(int i=0;i<size;i++) {
+        		TreeNode pNode = queue.poll();
+        		if(pNode.left==null&&pNode.right==null) {
+        			return depth;
+        		}
+        		else {
+        			if(pNode.left!=null) {queue.add(pNode.left);}
+        			if(pNode.right!=null) {queue.add(pNode.right);}
+        		}
+        	}
+        }
+        return depth;
+    }
+```
+
+
+
 
