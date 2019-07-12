@@ -69,8 +69,6 @@ Output: 1->2->3
     }
 ```
 
-
-
 ```java
 	public ListNode deleteDuplicates(ListNode head) {
 		ListNode start = new ListNode(0);
