@@ -16,6 +16,9 @@ Output: 1->2->3
 ```
 ## 2. 思路
 
+1. 迭代
+2. 递归
+
 ## 3. 解决方法
 
 ### 3.1 迭代
@@ -53,7 +56,7 @@ Output: 1->2->3
 ```
 ### 3.3 迭代2
 
-
+遇到重复数字，跳过后续所有
 
 ```java
     public ListNode deleteDuplicates(ListNode head) {
