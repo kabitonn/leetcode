@@ -34,7 +34,9 @@ Explanation: The square root of 8 is 2.82842..., and since
 
 ### 3.3 
 
-$$x_{k+1}$$
+$$x_{k+1} = x_k - f(x_k)/f'(x_k)$$
+$$f(x_n) = x^2 - n$$
+$$x_{k+1} = x_k - (x_k^2 - n)/2x_k = (x_k^2 + n)/2x_k = (x_k + n/x_k)/2$$
 
 ```java
     public int mySqrt(int x) {
