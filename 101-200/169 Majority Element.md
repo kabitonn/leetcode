@@ -67,7 +67,24 @@ Output: 2
         return candidate;
 	}
 ```
-时间复杂度：$#O(n)$$ Boyer-Moore 算法严格执行了 nn 次循环，所以时间复杂度是线性时间的。
+
+
+```java
+    public int majorityElement(int[] nums) {
+		Integer candidate=nums[0];
+		int count=0;
+		for(int n:nums){
+			if(count==0){
+				candidate = n;
+			}
+			count += n==candidate?1:-1;
+		}
+		return candidate;
+	}
+```
+
+
+时间复杂度：$$O(n)$$ Boyer-Moore 算法严格执行 n 次循环，时间复杂度是线性时间
 
 空间复杂度：$$O(1)$$ Boyer-Moore 只需要常数级别的额外空间。
 
