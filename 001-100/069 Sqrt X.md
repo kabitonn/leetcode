@@ -26,13 +26,63 @@ Explanation: The square root of 8 is 2.82842..., and since
 3. 牛顿法
 ## 3. 解决方法
 
-### 3.1
+### 3.1 遍历
 
 
 
-### 3.2
+```java
+    public int mySqrt(int x) {
+    	for(int i=1;i<=x/2+1;i++) {
+    		if(i==x/i) {return i;}
+    		else if(i>x/i) {return i-1;}
+    	}
+    	return 0;
+        
+    }
+```
 
-### 3.3 
+### 3.2 二分
+
+
+```java 
+    public int mySqrt1(int x) {
+    	if(x==0) {return 0;}
+    	int left = 1;
+    	int right = x/2+1;
+    	//int res = 0;
+    	while(left<=right) {
+    		int mid = left+(right-left)/2;
+    		if(mid == x/mid) {return mid;}
+    		else if(mid > x/mid) {right = mid-1;}
+    		else {
+				//res = mid;
+				left = mid+1;
+    		}
+    	}
+    	return right;
+    }
+```
+
+### 3.3 改进二分
+
+
+```java
+	public int mySqrt(int x) {
+		if(x==0) {return 0;}
+		int left = 1;
+		int right = x/2+1;
+		while(left<right){
+			int mid = left + (right-left + 1)/2;
+			if(mid > x / mid){	right = mid - 1;}
+			else  if(mid <= x/mid){	left = mid;}
+		}
+		return left;
+	}
+```
+
+
+
+### 3.4 
 
 $$x_{k+1} = x_k - f(x_k)/f'(x_k)$$
 $$f(x_n) = x^2 - n$$
