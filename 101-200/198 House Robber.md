@@ -103,6 +103,9 @@ sumEven 和 sumOdd为相邻奇偶数位置的最大值
         return Math.max(sumOdd, sumEven);
     }
 ```
+时间复杂度：$$O(n)$$。其中 n 为房子的数量。  
+空间复杂度：$$O(1)$$
+
 
 
 
