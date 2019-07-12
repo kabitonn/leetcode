@@ -25,6 +25,9 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
 
 ## 2. 思路
 
+动态规划
+
+
 ## 3. 解决方法
 
 ### 3.1
