@@ -78,6 +78,13 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 ### 3.3 环状替换
 
+```
+nums: [1, 2, 3, 4, 5, 6]
+k: 2
+```
+
+![](/assets/101-200/189-solution-3-1.png)
+
 ```java
     public void rotate(int[] nums,int k) {
         int len = nums.length;
@@ -98,5 +105,6 @@ rotate 2 steps to the right: [3,99,-1,-100]
     }
 ```
 
-
+时间复杂度：$$O(n)$$。只遍历了每个元素一次。  
+空间复杂度：$$O(1)$$ 。使用了常数个额外空间。
 
