@@ -23,11 +23,54 @@ Follow up:
 
 ## 2. 思路
 
+1. 每行正向遍历，根据上一行计算该行数据
+2. 每行逆向遍历，当前行即可作为上一行
+
 ## 3. 解决方法
 
 ### 3.1
 
+
+```java
+    public List<Integer> getRow(int rowIndex) {
+    	if(rowIndex==0) {return new ArrayList<>(Arrays.asList(1));}
+    	//if(rowIndex==1) {return new ArrayList<>(Arrays.asList(1,1));}
+    	List<Integer> row = null;
+        List<Integer> preLine = new ArrayList<>(Arrays.asList(1));
+        for(int i=1;i<=rowIndex;i++) {
+        	row = new ArrayList<>();
+        	row.add(1);
+        	for(int j=1;j<i;j++) {
+        		row.add(preLine.get(j-1)+preLine.get(j));
+        	}
+        	row.add(1);
+        	preLine = row;
+        }
+        return row;
+    }
+```
+
+
 ### 3.2
+
+每行首尾为1，自后向前计算该位置数值，覆盖已不再使用的位置的数据
+
+```java
+    public List<Integer> getRow(int rowIndex) {
+    	if(rowIndex==0) {return new ArrayList<>(Arrays.asList(1));}
+    	Integer[] line = new Integer[rowIndex+1];
+        for(int i=1;i<=rowIndex;i++) {
+        	line[0] = 1;
+        	line[i] = 1;
+        	for(int j=i-1;j>=1;j--) {
+        		line[j] = line[j]+line[j-1];
+        	}
+        }
+        List<Integer> row = new ArrayList<>(Arrays.asList(line));
+        return row;
+    }
+```
+
 
 
 
