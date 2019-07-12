@@ -24,6 +24,13 @@ Follow up:
 
 ### 3.1 动态规划1
 
+一维数组 $$dp [ i ]$$ 表示以下标 i 结尾的子数组的元素的最大的和，也就是这个子数组最后一个元素是下边为 i 的元素，并且这个子数组是所有以 i 结尾的子数组中，和最大的
+
+有两种情况，
+
+- 如果 $$dp [ i - 1 ] < 0$$，那么 $$dp [ i ] = nums [ i ]$$。
+- 如果 $$dp [ i - 1 ] > = $$0，那么 $$dp [ i ] = dp [ i - 1 ] + nums [ i ]$$
+
 ```java
     public int maxSubArray(int[] nums) {
         int len = nums.length;
