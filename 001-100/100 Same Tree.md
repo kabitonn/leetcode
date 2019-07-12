@@ -62,4 +62,31 @@ Output: false
 
 ### 3.2 迭代
 
+自定义站
+
+```java
+	public boolean isSameTree(TreeNode p, TreeNode q) {
+		Deque<TreeNode> stackP = new LinkedList<>();
+		Deque<TreeNode> stackQ = new LinkedList<>();
+		stackP.push(p);
+		stackQ.push(q);
+		while(!stackP.isEmpty()&&!stackQ.isEmpty()) {
+			p = stackP.pop();
+			q = stackQ.pop();
+			if(p==null&q==null) {continue;}
+			if(!isSame(p, q)) {return false;}
+			stackP.push(p.left);
+			stackP.push(p.right);
+			stackQ.push(q.left);
+			stackQ.push(q.right);
+		}
+        return stackP.isEmpty()&&stackQ.isEmpty();
+    }
+	public boolean isSame(TreeNode p, TreeNode q) {
+		if(p==null&&q==null) {return true;}
+		else if(p==null||q==null) {return false;}
+        if(p.val!=q.val) {return false;}
+        return true;
+	}
+```
 
