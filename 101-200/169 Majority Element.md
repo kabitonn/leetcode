@@ -22,9 +22,50 @@ Output: 2
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 排序中位数
 
 
+```java
+    public int majorityElement(int[] nums) {
+    	Arrays.sort(nums);
+        return nums[nums.length/2];
+    }
+```
 
-### 3.2
+
+### 3.2 哈希表
+
+
+```java
+    public int majorityElement1(int[] nums) {
+    	Map<Integer, Integer> map = new HashMap<>();
+    	for(int n :nums) {
+    		int frequence = map.getOrDefault(n, 0);
+    		map.put(n, frequence+1);
+    		if(map.get(n)>nums.length/2) {
+    			return n;
+    		}
+    	}
+    	return -1;
+    }
+```
+
+### 3.3 
+
+
+```java
+    public int majorityElement2(int[] nums) {
+    	int candidate=nums[0],count=1,i=1;
+        for(;i<nums.length;i++)
+        {
+            if(candidate==nums[i])
+                count++;
+            else if(--count==0)
+                candidate=nums[i+1];
+        }   
+        return candidate;
+	}
+```
+
+
 
