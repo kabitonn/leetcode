@@ -18,10 +18,41 @@ Output: 1->2->3
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 迭代
 
+找到一个，删除一个；相等的话就删除下一个节点，不相等就后移
 
+```java
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode cur = head;
+        while(cur!=null&&cur.next!=null) {
+        	ListNode next = cur.next;
+        	if(cur.val == next.val) {
+        		cur.next = next.next;
+        	}else {
+				cur = cur.next;
+			}
+        }
+        return head;
+    }
+```
 
 ### 3.2
+
+
+```java
+    public ListNode deleteDuplicates2(ListNode head) {
+    	if (head == null) {return null;}
+        if (head.next!=null && head.val == head.next.val) {
+        	head.next = head.next.next;
+        	head = deleteDuplicates2(head);
+        }else {
+			head.next = deleteDuplicates2(head.next);
+		}
+        return head;
+    }
+```
+
+
 
 
