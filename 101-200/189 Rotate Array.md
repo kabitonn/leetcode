@@ -77,7 +77,7 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 ```java
     public void rotate(int[] nums,int k) {
-	int len = nums.length;
+        int len = nums.length;
         k%=len;
         if(len == 0||k==0) {return;}
         int count = 0;
