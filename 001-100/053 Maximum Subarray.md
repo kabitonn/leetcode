@@ -54,6 +54,7 @@ Follow up:
 
 ### 3.2 动态规划2
 
+用一个变量表示以下标 $$i$$ 结尾的子数组的元素的最大的和
 ```java
     public int maxSubArray(int[] nums) {
         int sum=0;
@@ -66,6 +67,10 @@ Follow up:
         return maxSum;
     }
 ```
+时间复杂度：$$ O(n)$$。
+
+空间复杂度：$$O(1)$$。
+
 
 ### 3.3 折半
 
