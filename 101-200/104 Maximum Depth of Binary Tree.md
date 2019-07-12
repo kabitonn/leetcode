@@ -28,7 +28,7 @@ return its depth = 3.
 
 ## 3. 解决方法
 
-### 3.1 递归
+### 3.1 递归DFS
 DFS深度遍历
 
 ```java
@@ -39,11 +39,40 @@ DFS深度遍历
 ```
 
 
-### 3.2 迭代
+### 3.2 迭代DFS
 
 
 ```java
-    public int maxDepth1(TreeNode root) {
+    public int maxDepth(TreeNode root) {
+    	if(root==null) {return 0;}
+        Deque<TreeNode> queue = new LinkedList<>();
+        Deque<Integer> value = new LinkedList<>();
+        queue.push(root);
+        value.push(1);
+        int depth = 0;
+        while(!queue.isEmpty()) {
+        	TreeNode pNode = queue.pop();
+        	int curDepth = value.pop();
+        	depth = Math.max(depth, curDepth);
+        	if(pNode.left!=null) {
+        		queue.push(pNode.left);
+        		value.push(1+curDepth);
+        	}
+        	if(pNode.right!=null) {
+        		queue.push(pNode.right);
+        		value.push(1+curDepth);
+        	}
+        	
+        }
+        return depth;
+    }
+```
+
+### 3.3 迭代BFS
+
+
+```java
+    public int maxDepth(TreeNode root) {
     	if(root==null) {return 0;}
         Deque<TreeNode> queue = new LinkedList<>();
         queue.add(root);
@@ -60,5 +89,3 @@ DFS深度遍历
         return depth;
     }
 ```
-
-
