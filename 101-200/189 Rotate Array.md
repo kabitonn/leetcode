@@ -30,9 +30,46 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 旋转k次
 
 
+```java
+    public void rotate(int[] nums, int k) {
+        int len = nums.length;
+        k%=len;
+        if(len == 0||k==0) {return;}
+    	for(int i=0;i<k;i++) {
+        	int tmp = nums[len-1];
+        	for(int j=len-1;j>0;j--) {
+        		nums[j] = nums[j-1];
+        	}
+        	nums[0] = tmp;
+        }
+    }
+```
 
-### 3.2
+
+### 3.2 三次逆序
+
+```java
+   public void rotate(int[] nums, int k) {
+    	int len = nums.length;
+        k%=len;
+        if(len == 0||k==0) {return;}
+        reverse(nums, 0, len-1);
+        reverse(nums, 0, k-1);
+        reverse(nums, k, len-1);
+    }
+    public void reverse(int[] nums, int i,int j) {
+    	while(i<j) {
+    		int tmp = nums[i];
+    		nums[i] = nums[j];
+    		nums[j] = tmp;
+    		i++;
+    		j--;
+    	}
+    }
+```
+### 3.3 一次旋转k位
+
 
