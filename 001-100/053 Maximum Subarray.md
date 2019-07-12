@@ -20,8 +20,7 @@ Follow up:
 
 ## 3. 解决方法
 
-### 3.1
-
+### 3.1 动态规划1
 
 
 ```java
@@ -56,9 +55,51 @@ Follow up:
     }
 ```
 
+### 3.2 动态规划2
+
+### 3.3 折半
 
 
+```java
+    public int maxSubArray(int[] nums) {
+        return maxSubArrayPart(nums,0,nums.length-1);
+    }
+    
+    private int maxSubArrayPart(int[] nums,int left,int right){
+        if(left==right){
+            return nums[left];
+        }
+        int mid=(left+right)/2;
+        return Math.max(
+            maxSubArrayPart(nums,left,mid),
+            Math.max(
+                maxSubArrayPart(nums,mid+1,right),
+                maxSubArrayAll(nums,left,mid,right)
+            )
+        );
+    }
+
+    //左右两边合起来求解
+    private int maxSubArrayAll(int[] nums,int left,int mid,int right){
+        int leftSum=Integer.MIN_VALUE;
+        int sum=0;
+        for(int i=mid;i>=left;i--){
+            sum+=nums[i];
+            if(sum>leftSum){
+                leftSum=sum;
+            }
+        }
+        sum=0;
+        int rightSum=Integer.MIN_VALUE;
+        for(int i=mid+1;i<=right;i++){
+            sum+=nums[i];
+            if(sum>rightSum){
+                rightSum=sum;
+            }
+        }
+        return leftSum+rightSum;
+    }
+```
 
 
-### 3.2
 
