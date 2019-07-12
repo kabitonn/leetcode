@@ -23,11 +23,25 @@ return its minimum depth = 2.
 
 ## 2. 思路
 
+1. 递归
+2. 迭代
+
 ## 3. 解决方法
 
-### 3.1
+### 3.1 递归
+
+
+```java
+    public int minDepth(TreeNode p) {
+    	if(p==null) {return 0;}
+		if(p.left==null&&p.right==null) {return 1;}
+		if(p.left==null) {return 1+minDepth(p.right);}
+		if(p.right==null) {return 1+minDepth(p.left);}
+		return 1+Math.min(minDepth(p.left), minDepth(p.right));
+    }
+```
 
 
 
-### 3.2
+### 3.2 迭代
 
