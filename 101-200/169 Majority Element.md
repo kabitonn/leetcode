@@ -50,8 +50,9 @@ Output: 2
     }
 ```
 
-### 3.3 
+### 3.3 Boyer Moore投票法
 
+如果我们把众数记为 +1+1 ，把其他数记为 -1−1 ，将它们全部加起来，显然和大于 0 ，从结果本身我们可以看出众数比其他数多。
 
 ```java
     public int majorityElement2(int[] nums) {
@@ -66,6 +67,9 @@ Output: 2
         return candidate;
 	}
 ```
+时间复杂度：$#O(n)$$ Boyer-Moore 算法严格执行了 nn 次循环，所以时间复杂度是线性时间的。
+
+空间复杂度：$$O(1)$$ Boyer-Moore 只需要常数级别的额外空间。
 
 
 
