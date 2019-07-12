@@ -24,7 +24,77 @@ Explanation: The array represents the integer 4321.
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 两数相加
 
 
-### 3.2
+```java
+	public int[] plusOne(int[] digits) {
+		int n = digits.length;
+		List<Integer> list = new ArrayList<>();
+		int carry = 1;
+		int num = 0;
+		for(int i=n-1;i>=0;i--) {
+			num = digits[i]+carry;
+			carry = num/10;
+			num %= 10;
+			list.add(0,num);
+		}
+		if(carry!=0) {
+			list.add(0, carry);
+		}
+		n = list.size();
+    	int[] plusNum = new int[n];
+    	for(int i=0;i<n;i++) {
+    		plusNum[i] = list.get(i);
+    	}
+		return plusNum;
+	}
+```
+
+
+
+### 3.2 个位加1
+
+
+```java
+	public int[] plusOne(int[] digits) {
+		int len = digits.length;
+        for(int i = len - 1; i >= 0; i--) {
+            digits[i]++;
+            digits[i] %= 10;
+            if(digits[i]!=0)
+                return digits;
+        }
+        digits = new int[len + 1];
+        digits[0] = 1;
+        return digits;
+	}
+```
+
+### 3.3 转换为数字相加
+
+
+```java
+    public int[] plusOne(int[] digits) {
+        long num = 0;
+    	for(int n:digits) {
+        	num = num*10+n;
+        }
+    	num++;
+    	List<Integer> list = new ArrayList<>();
+    	while(num!=0) {
+    		list.add((int)(num%10));
+    		num/=10;
+    	}
+    	int n = list.size();
+    	int[] plusNum = new int[n];
+    	for(int i=0;i<n;i++) {
+    		plusNum[i] = list.get(n-i-1);
+    	}
+    	return plusNum;
+    }
+```
+
+
+
+
