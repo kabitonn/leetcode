@@ -29,11 +29,59 @@ Output: 4
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 排序
 
 
+```java
+    public int singleNumber(int[] nums) {
+    	Arrays.sort(nums);
+        for(int i=0;i<nums.length;i++) {
+        	if(i+1<nums.length&&nums[i]==nums[i+1]) {
+        		while(i+1<nums.length&&nums[i]==nums[i+1]) {i++;}
+        	}
+        	else {
+				return nums[i];
+			}
+        }
+        return 0;
+    }
+```
 
-### 3.2
+
+### 3.2 HashMap
+
+
+```java
+    public int singleNumber(int[] nums) {
+    	Map<Integer, Integer> map = new HashMap<>();
+    	for(int n:nums) {
+    		Integer count = map.get(n);
+    		count = count==null?1:count+1;
+    		map.put(n, count);
+    	}
+    	for(Integer n:map.keySet()) {
+    		if(map.get(n)==1) {
+    			return n;
+    		}
+    	}
+    	return 0;
+    }
+```
+
+
+### 3.3 异或运算
 - $$a⊕0 = a$$
 - $$a⊕a = 0$$
 - $$a⊕b⊕a=(a⊕a)⊕b=0⊕b=b$$
+
+
+```java
+    public int singleNumber(int[] nums) {
+    	int xor = 0;
+    	for(int n:nums) {
+    		xor ^=  n;
+    	}
+    	return xor;
+    }
+```
+
