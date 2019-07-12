@@ -25,10 +25,57 @@ Output: false
 
 ### 3.1 遍历
 
+
+```java
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        for(int i=0;i<nums.length;i++) {
+            for(int j=i+1;j<=i+k&&j<nums.length;j++) {
+                if(nums[i]==nums[j]) {return true;}
+            }
+        }
+        return false;
+    }
+```
+
+
 ### 3.2 HashMap
 
 
-### 3.3 HashSet
+```java
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<nums.length;i++) {
+            if(map.containsKey(nums[i])&&(i-map.get(nums[i])<=k)){
+                return true;
+            }
+            else {
+                map.put(nums[i], i);
+            }
+        }
+        return false;
+    }
+```
+
+### 3.3 HashSet 滑动窗口
+
+
+```java
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Set<Integer> set = new HashSet<>();
+        for(int i=0;i<nums.length;i++) {
+            if(set.add(nums[i])) {
+                if(set.size()>k) {
+                    set.remove(nums[i-k]);
+                }
+            }
+            else {
+                return true;
+            }
+        }
+        return false;
+    }
+```
+
 
 
 
