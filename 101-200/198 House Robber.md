@@ -80,6 +80,8 @@ sum2为不抢当前房子最大值
 
 ### 3.3
 
+sumEven 和 sumOdd为相邻奇偶数位置的最大值
+
 ```java
     public int rob(int[] nums) {
         int sumOdd = 0;
