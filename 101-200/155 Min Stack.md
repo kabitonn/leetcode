@@ -24,11 +24,12 @@ minStack.getMin();   --> Returns -2.
 
 ## 2. 思路
 
+栈顶存放最小值
 ## 3. 解决方法
 
 ### 3.1
 
-
+入栈出栈判断最小值是否改变并进行栈操作
 
 ```java
 public class MinStack {
