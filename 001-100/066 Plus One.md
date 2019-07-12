@@ -22,6 +22,9 @@ Explanation: The array represents the integer 4321.
 ```
 ## 2. 思路
 
+1. 将1看做一个数
+2. 1即为1
+
 ## 3. 解决方法
 
 ### 3.1 两数相加
