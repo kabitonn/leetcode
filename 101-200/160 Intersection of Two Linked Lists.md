@@ -58,7 +58,90 @@ Explanation: The two lists do not intersect, so return null.
 
 ### 3.1
 
+
+```java
+	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+		ListNode pA = headA;
+		ListNode pB = headB;
+		int lenA = 0;
+		int lenB = 0;
+		while(pA!=null) {
+			lenA++;
+			pA = pA.next;
+		}
+		while(pB!=null) {
+			lenB++;
+			pB = pB.next;
+		}
+		int diff = lenA - lenB;
+		if(diff>0) {
+			while(diff--!=0) {
+				headA = headA.next;
+			}
+		}
+		else if (diff<0) {
+			while(diff++!=0) {
+				headB = headB.next;
+			}
+		}
+		while(headA!=null) {
+			if(headA==headB) {return headA;}
+			headA = headA.next;
+			headB = headB.next;
+		}
+		return null;
+	}
+```
+
+
 ### 3.2
+
+
+```java
+	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+		if(headA==null||headB==null) {return null;}
+		ListNode pA = headA;
+		ListNode pB = headB;
+		while(pA!=pB) {
+			pA = pA==null?headB:pA.next;
+			pB = pB==null?headA:pB.next;
+		}
+		return pA;
+	}
+```
+
+### 3.3 构造环求入口点
+
+
+
+```java
+	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+		if (headA == null || headB == null) {	return null;}
+        ListNode last = headB;
+        while (last.next != null) {	last = last.next;}
+        last.next = headB;
+
+        ListNode fast = headA;
+        ListNode slow = headA;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                fast = headA;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                last.next = null;
+                return fast;
+            }
+        }
+        last.next = null;
+        return null;
+    }
+```
+
 
 
 
