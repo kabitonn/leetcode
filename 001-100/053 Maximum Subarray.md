@@ -22,5 +22,27 @@ Follow up:
 
 ### 3.1
 
+
+
+```java
+	public int maxSubArray(int[] nums) {
+        int len = nums.length;
+        int[] maxSums = new int[len];
+        maxSums[0] = nums[0];
+        int maxSum = maxSums[0];
+        for(int i=1;i<len;i++) {
+        	if(maxSums[i-1]<0) {
+        		maxSums[i] = nums[i];
+        	}else {
+				maxSums[i] = maxSums[i-1] + nums[i];
+			}
+        	if(maxSums[i]>maxSum) {	maxSum = maxSums[i];}
+        }
+        return maxSum;
+    }
+```
+
+
+
 ### 3.2
 
