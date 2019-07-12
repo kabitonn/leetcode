@@ -25,8 +25,34 @@ Output: true
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 set
 
 
-### 3.2
+```java
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for(int n:nums) {
+        	if(set.contains(n)) {return true;}
+        	set.add(n);
+        }
+        return false;
+    }
+```
+
+
+
+### 3.2 排序比较相邻
+
+
+```java
+    public boolean containsDuplicate1(int[] nums) {
+        Arrays.sort(nums);
+        for(int i=1;i<nums.length;i++) {
+        	if(nums[i]==nums[i-1]) {return true;}
+        }
+        return false;
+    }
+```
+
+
 
