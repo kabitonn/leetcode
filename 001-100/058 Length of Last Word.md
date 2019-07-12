@@ -15,9 +15,41 @@ Output: 5
 ```
 ## 2. 思路
 
+1. 过滤尾部空格，从后向前遍历，找到第一个不为字母的索引
+2. 
+
 ## 3. 解决方法
 
 ### 3.1
 
+```java
+    public int lengthOfLastWord(String s) {
+        String string = s.trim();
+        int i = string.length()-1;
+        while(i>=0 ) {
+        	if((string.charAt(i)<='z'&&string.charAt(i)>='a')||(string.charAt(i)<='Z'&&string.charAt(i)>='A')) {
+        		i--;
+        	}
+        	else {break;}
+        }
+        return string.length()-i-1;
+    }
+```
+时间复杂度：$$O(n)$$。
+
+空间复杂度：$$O(1)$$。
+
 ### 3.2 
+
+
+```java
+    public int lengthOfLastWord(String s) {
+        int end = s.length()-1;
+        while(end>=0&&s.charAt(end)==' ') {end--;}
+        int start = end;
+        while(start>=0&&s.charAt(start)!=' ') {start--;}
+        return end-start;
+    }
+```
+
 
