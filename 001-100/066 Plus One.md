@@ -26,6 +26,7 @@ Explanation: The array represents the integer 4321.
 
 ### 3.1 两数相加
 
+每位数字和进位相加
 
 ```java
 	public int[] plusOne(int[] digits) {
@@ -51,10 +52,12 @@ Explanation: The array represents the integer 4321.
 	}
 ```
 
+时间复杂度：$$O(n)$$
 
 
 ### 3.2 个位加1
 
+若有进位继续相加，进位时，carry为1，低位为0
 
 ```java
 	public int[] plusOne(int[] digits) {
