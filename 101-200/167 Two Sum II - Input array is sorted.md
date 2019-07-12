@@ -23,9 +23,47 @@ Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 遍历
 
 
+```java
+    public int[] twoSum(int[] numbers, int target) {
+        for(int i=0;i<numbers.length-1;i++) {
+        	for(int j=i+1;j<numbers.length;j++) {
+        		int sum = numbers[i]+numbers[j];
+        		if(sum==target) {
+        			return new int[] {i+1,j+1};
+        		}
+        		else if (sum>target) {
+					break;
+				}
+        	}
+        }
+        return new int[]{};
+    }
+```
 
-### 3.2
+
+### 3.2 双指针
+
+
+```java
+    public int[] twoSum(int[] numbers, int target) {
+    	int i = 0;
+    	int j = numbers.length-1;
+    	while(i<j) {
+    		int sum = numbers[i]+numbers[j];
+    		if(sum==target) {
+    			return new int[] {i+1,j+1};
+    		}
+    		else if (sum>target) {
+				j--;
+			}
+    		else if (sum<target) {
+				i++;
+			}
+    	}
+    	return new int[]{};
+    }
+```
 
