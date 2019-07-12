@@ -27,12 +27,26 @@ But the following [1,2,2,null,3,null,3] is not:
 
 
 ## 2. 思路
+1.递归
+2.迭代
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 递归
 
 
 
-### 3.2
+```java
+    public boolean isSymmetric(TreeNode root) {
+        return isMirror(root, root);
+    }
+    public boolean isMirror(TreeNode p,TreeNode q) {
+		if(p==null&&q==null) {return true;}
+		else if(p==null||q==null) {return false;}
+		if(p.val!=q.val) {return false;}
+		return isMirror(p.left, q.right)&&isMirror(p.right, q.left);
+	}
+```
+
+### 3.2 迭代
 
