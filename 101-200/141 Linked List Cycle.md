@@ -44,9 +44,39 @@ Follow up:
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 快慢指针相交
 
-### 3.2
+
+```java
+    public boolean hasCycle(ListNode head) {
+    	if(head==null) {return false;}
+        ListNode fast = head;
+        ListNode slow = head;
+        while(fast!=null&&fast.next!=null) {
+        	slow = slow.next;
+        	fast = fast.next.next;
+        	if(slow == fast) {return true;}
+        }
+        return false;
+    }
+```
+
+### 3.2 哈希集
+
+
+```java
+    public boolean hasCycle1(ListNode head) {
+    	ListNode cur = head;
+    	Set<ListNode> set = new HashSet<>();
+    	while(cur!=null) {
+    		if(set.contains(cur)) {return true;}
+    		set.add(cur);
+    		cur = cur.next;
+    	}
+    	return false;
+    }
+```
+
 
 
 
