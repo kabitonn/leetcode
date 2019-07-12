@@ -22,6 +22,7 @@ return its bottom-up level order traversal as:
 
 
 ## 2. 思路
+层次遍历BFS
 
 ## 3. 解决方法
 
