@@ -21,6 +21,7 @@ Explanation: The square root of 8 is 2.82842..., and since
              the decimal part is truncated, 2 is returned.
 ```
 ## 2. 思路
+求小于等于算术平方根的最大值
 1. 遍历
 2. 二分
 3. 牛顿法
