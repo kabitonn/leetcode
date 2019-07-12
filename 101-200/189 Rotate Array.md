@@ -73,3 +73,26 @@ rotate 2 steps to the right: [3,99,-1,-100]
 ### 3.3 一次旋转k位
 
 
+```java
+	public void rotate(int[] nums,int k) {
+		int len = nums.length;
+        k%=len;
+        if(len == 0||k==0) {return;}
+        int count = 0;
+        for (int start = 0; count < nums.length; start++) {
+            int current = start;
+            int prev = nums[start];
+            do {
+                current = (current + k) % nums.length;
+                int temp = nums[current];
+                nums[current] = prev;
+                prev = temp;
+                count++;
+            } while (start != current);
+        }
+	}
+```
+
+
+
+
