@@ -63,6 +63,46 @@ Could you do it in O(n) time and O(1) space?
         return true;
     }
 ```
+### 3.3 逆序后半部分
+
+
+```java
+    public boolean isPalindrome(ListNode head) {
+        if(head==null) {return true;}
+        ListNode slow=head,fast=head;
+        while(fast.next!=null&&fast.next.next!=null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        ListNode mid = slow;
+        mid.next = reverseList(mid.next);
+        ListNode left = head,right = mid.next;
+        while(right!=null) {
+            if(left.val!=right.val) {return false;}
+            left = left.next;
+            right = right.next;
+        }
+
+        return true;
+    }
+    public ListNode reverseList(ListNode head) {
+        if(head==null||head.next==null) {
+            return head;
+        }
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+```
+### 遍历同时逆序前半部分
+
+
+```java
+
+```
+
+
 
 
 
