@@ -52,7 +52,7 @@ One longest palindrome that can be built is "dccaccd", whose length is 7.
 
 
 
-### 3.2
+### 3.2 数组模拟map
 
 
 $$count/2*2$$ 实现只计偶数部分
