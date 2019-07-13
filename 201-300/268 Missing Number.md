@@ -44,6 +44,7 @@ Output: 8
 
 ### 3.2 求总合
 
+差值即为missing
 
 ```java
     public int missingNumber(int[] nums) {
