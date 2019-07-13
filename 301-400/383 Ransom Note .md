@@ -19,7 +19,7 @@ canConstruct("aa", "aab") -> true
 ## 3. 解决方法
 
 ### 3.1 HashMap
-
+map保存每种字符的个数，ransom出现一次减一，小于0则说明无法构造
 
 ```java
     public boolean canConstruct(String ransomNote, String magazine) {
@@ -41,7 +41,7 @@ canConstruct("aa", "aab") -> true
     }
 ```
 ```java
-    public boolean canConstruct1(String ransomNote, String magazine) {
+    public boolean canConstruct(String ransomNote, String magazine) {
         char[] ransom = ransomNote.toCharArray();
         char[] maga = magazine.toCharArray();
         int[] map = new int[26];
@@ -54,10 +54,8 @@ canConstruct("aa", "aab") -> true
         }
         return true;
     }
-
 ```
 
 
 
-### 3.2
 
