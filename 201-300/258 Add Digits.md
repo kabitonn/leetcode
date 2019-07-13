@@ -19,8 +19,40 @@ Could you do it without any loop/recursion in O(1) runtime?
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 暴力法
 
 
-### 3.2
+```java
+	public int addDigits(int num) {
+		while(num/10!=0) {
+			int sum = 0;
+			while(num!=0) {
+				sum+=num%10;
+				num/=10;
+			}
+			num=sum;
+		}
+		return num;
+	}
+```
+
+
+
+
+### 3.2 规律
+
+
+```java
+	public int addDigits(int num) {
+		if(num>9)
+		{
+			num=num%9;
+			if(num==0)
+				return 9;
+		}
+		return num;
+	}
+```
+
+
 
