@@ -27,10 +27,68 @@ stack.empty(); // returns false
 
 ## 2. 思路
 
+push:入队后之前的已入队的出队重新入队，实现后入先出
+pop:队首出队
+top:队首元素
+empty:队列是否为空
+
 ## 3. 解决方法
 
 ### 3.1 
 
+```java 
+public class MyStack {
 
-### 3.2
+    private Queue<Integer> queue;
+    /** Initialize your data structure here. */
+    public MyStack() {
+        queue = new LinkedList<>();
+    }
+    
+    /** Push element x onto stack. */
+    public void push(int x) {
+        queue.offer(x);
+        int size = queue.size();
+        while(size-->1){
+        	queue.offer(queue.poll());
+        }
+    }
+    
+    /** Removes the element on top of the stack and returns that element. */
+    public int pop() {
+        return queue.poll();
+        
+    }
+    
+    /** Get the top element. */
+    public int top() {
+        return queue.peek();
+    }
+    
+    /** Returns whether the stack is empty. */
+    public boolean empty() {
+        return queue.isEmpty();
+    }
+}
+```
+
+入栈push
+
+
+```java
+    public void push(int x) {
+        queue.offer(x);
+        int size = queue.size();
+        while(size-->1){
+        	queue.offer(queue.poll());
+        }
+    }
+```
+时间复杂度：$$O(n)$$算法会让 q1 出队 n 个元素，同时入队 $$n + 1$$ 个元素到 q2。这个过程会产生 $$2n + 1$$ 步操作，同时链表中 插入 操作和 移除 操作的时间复杂度为$$O(1)$$，因此时间复杂度为 $$O(n)$$。
+
+空间复杂度：$$O(1)$$
+
+
+
+
 
