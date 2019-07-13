@@ -25,7 +25,7 @@ Explanation: All root-to-leaf paths are: 1->2->5, 1->3
 
 ## 3. 解决方法
 
-### 3.1 递归
+### 3.1 递归DFS
 
 
 ```java
@@ -100,10 +100,41 @@ public List<String> binaryTreePaths(TreeNode root) {
         }
     }
 ```
+时间复杂度：每个节点只会被访问一次，因此时间复杂度为 $$O(N)$$，其中 N 表示节点数目。
+空间复杂度：$$O(N)$$。这里不考虑存储答案 paths 使用的空间，仅考虑额外的空间复杂度。额外的空间复杂度为递归时使用的栈空间，在最坏情况下，当二叉树中每个节点只有一个孩子节点时，递归的层数为 NN，此时空间复杂度为 $$O(N)$$。在最好情况下，当二叉树为平衡二叉树时，它的高度为 $$\log(N)$$，此时空间复杂度为 $$\log(N)$$。
 
 
+### 3.2 迭代DFS
 
 
-
-### 3.2
+```java
+    public List<String> binaryTreePaths3(TreeNode root) {
+        LinkedList<String> paths = new LinkedList<>();
+        if (root == null)
+            return paths;
+        LinkedList<TreeNode> node_stack = new LinkedList<>();
+        LinkedList<String> path_stack = new LinkedList<>();
+        node_stack.add(root);
+        path_stack.add("" + root.val);
+        TreeNode node;
+        String path;
+        while (!node_stack.isEmpty()) {
+            node = node_stack.pollLast();
+            path = path_stack.pollLast();
+            if ((node.left == null) && (node.right == null))
+                paths.add(path);
+            if (node.left != null) {
+                node_stack.add(node.left);
+                path_stack.add(path + "->" + node.left.val);
+            }
+            if (node.right != null) {
+                node_stack.add(node.right);
+                path_stack.add(path + "->" + node.right.val);
+            }
+        }
+        return paths;
+    }
+```
+时间复杂度：$$O(N)$$，每个节点只会被访问一次。
+空间复杂度：$$O(N)$$，在最坏情况下，队列中有 N 个节点。
 
