@@ -37,9 +37,17 @@ Explanation: You are given the third node with value 1, the linked list should b
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 与下一个节点交换
+因为我们知道要删除的节点不是列表的末尾，所以我们可以保证这种方法是可行的
 
-### 3.2
+```java 
+    public void deleteNode(ListNode node) {
+    	node.val = node.next.val;
+        node.next = node.next.next;
+    }
+```
+
+
 
 
 
