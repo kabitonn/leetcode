@@ -44,6 +44,8 @@ Then 4 is the first bad version.
         return left;
     }
 ```
+时间复杂度：$$O(\log n)$$。搜索空间每次减少一半，因此时间复杂度为 $$O(\log n)$$。
+空间复杂度：$$O(1)$$。
 
 ### 3.2 线性查找(超时)
 
