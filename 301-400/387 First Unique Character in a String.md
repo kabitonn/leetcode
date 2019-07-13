@@ -20,8 +20,34 @@ return 2.
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 哈希表+遍历哈希
+
+map存储字符出现的频率，若大于1将其修改为-1
+```java
+    public int firstUniqChar(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        int i = 0;
+        for(char c:s.toCharArray()) {
+        	if(!map.containsKey(c)) {
+        		map.put(c, i);
+        	}
+        	else {
+				map.put(c, -1);
+			}
+        	i++;
+        }
+        int first = -1;
+        for(Character c:map.keySet()) {
+        	int index = map.get(c);
+        	if(index!=-1&&(first==-1||first>index)) {
+        		first = index;
+        	}
+        }
+        return first;
+    }
+```
+### 3.2 哈希表+遍历字符串
 
 
-### 3.2
+### 3.3 首次出现索引和末次出现索引
 
