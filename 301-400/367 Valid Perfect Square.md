@@ -22,7 +22,30 @@ Output: false
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 二分
+
+
+```java
+	public boolean isPerfectSquare(int num) {
+		if(num<=0) {return false;}
+		int low = 1;
+		int high = num;
+		while(low<=high) {
+			int mid = low+(high-low)/2;
+			if(mid == num*1.0/mid){
+				return true;
+			}
+			else if(mid > num*1.0/mid){
+				high = mid-1;
+			}
+			else{
+				low = mid+1;
+			}
+		}
+		return false;
+	}
+```
+
 
 
 ### 3.2
