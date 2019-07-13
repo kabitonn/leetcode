@@ -61,8 +61,8 @@ Notice each digit has it's own entry in the array.
 
 ## 3. 解决方法
 
-### 3.1 
-
+### 3.1 双指针
+每次遇到新字符先写入旧字符
 
 ```java
 	public int compress0(char[] chars) {
@@ -96,8 +96,12 @@ Notice each digit has it's own entry in the array.
 
 
 
-### 3.2
-
+### 3.2 双指针
+原地算法 双指针
+每次遇到新字符直接写入新字符
+index 已压缩的结果的末尾,
+指针i指示未压缩字符串的开头
+遇到相同的字符,指针i便向后滑动,直到遇到不同字符.指针i滑动的距离即为相同字符序列的长度
 
 ```java
     public int compress(char[] chars) {
