@@ -19,8 +19,12 @@ Explanation: If there are 4 stones in the heap, then you will never win the game
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 规律
 
+如果堆中石头的数量 nn 不能被 44 整除，那么你总是可以赢得 Nim 游戏的胜利
 
-### 3.2
-
+```java
+    public boolean canWinNim(int n) {
+    	return n%4!=0;
+    }
+```
