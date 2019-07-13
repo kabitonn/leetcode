@@ -54,7 +54,7 @@ This problem was inspired by this original tweet by Max Howell:
 核心在于遍历节点，只要能接触到每一个节点，就能反转它的左右孩子，至于遍历方式反而不重要，DFS也可
 
 ```java
-    public TreeNode invertTree1(TreeNode root) {
+    public TreeNode invertTree(TreeNode root) {
     	Deque<TreeNode> queue = new LinkedList<>();
     	if(root!=null) {queue.add(root);}
     	while(!queue.isEmpty()) {
