@@ -23,6 +23,7 @@ One longest palindrome that can be built is "dccaccd", whose length is 7.
 
 ## 2. 思路
 
+贪心法
 计算每种字符出现频率，奇数的除去偶数部分只计一次
 
 ## 3. 解决方法
