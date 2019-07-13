@@ -37,7 +37,7 @@ Because the 4th row is incomplete, we return 3.
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 遍历
 
 
 ```java
@@ -52,5 +52,24 @@ Because the 4th row is incomplete, we return 3.
 
 
 
-### 3.2
+### 3.2 二分法求左边界
+
+
+```java
+    public int arrangeCoins(int n) {
+    	int low = 1;
+    	int high = n;
+    	while(low<high) {
+    		int mid = low+(high-low+1)/2;
+    		if(1L * mid*(mid + 1) /2 <= n){
+                low = mid;
+            }else {
+                high = mid - 1;
+            }
+    	}
+    	return low;
+    }
+```
+
+
 
