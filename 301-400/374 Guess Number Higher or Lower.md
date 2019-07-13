@@ -24,8 +24,61 @@ Output: 6
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 基本二分
 
 
-### 3.2
+```java
+    public int guessNumber(int n) {
+        int low = 1;
+        int high = n;
+        while(low<=high) {
+        	int mid = low+(high-low)/2;
+        	if(guess(mid)==0) {
+        		return mid;
+        	}
+        	else if (guess(mid)==-1) {
+				high = mid-1;
+			}
+        	else {
+				low = mid+1;
+			}
+        }
+        return 0;
+    }
+```
+
+
+### 3.2 二分修改
+
+
+```java
+    public int guessNumber1(int n) {
+        int low = 1;
+        int high = n;
+        while(low<high) {
+        	int mid = low+(high-low+1)/2;
+        	if (guess(mid)==-1) {
+				high = mid-1;
+			}
+        	else {
+				low = mid;
+			}
+        }
+        return low;
+    }
+```
+### 3.3 遍历
+
+
+```java
+	public int guessNumber(int n) {
+		for (int i = 1; i < n; i++)
+			if (guess(i) == 0)
+				return i;
+		return n;
+	}
+```
+
+
+
 
