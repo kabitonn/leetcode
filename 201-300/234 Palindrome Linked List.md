@@ -63,7 +63,7 @@ Could you do it in O(n) time and O(1) space?
         return true;
     }
 ```
-### 3.3 逆序后半部分
+### 3.3 快慢指针-后部翻转
 
 
 ```java
@@ -95,7 +95,7 @@ Could you do it in O(n) time and O(1) space?
         return newHead;
     }
 ```
-### 遍历同时逆序前半部分
+### 快慢指针-前部翻转
 
 
 ```java
