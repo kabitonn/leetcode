@@ -43,6 +43,7 @@ Output: [1,3,12,0,0]
 ```
 
 ### 3.2 只关注非0
+只固定非0元素，末尾补0
 
 ```java
     public void moveZeroes1(int[] nums) {
@@ -58,7 +59,10 @@ Output: [1,3,12,0,0]
     }
 ```
 
-### 3.3
+### 3.3 遍历替换
+
+- 慢指针（pos）之前的所有元素都是非零的。
+- 当前指针和慢速指针之间的所有元素都是零。
 
 ```java
     public void moveZeroes2(int[] nums) {
