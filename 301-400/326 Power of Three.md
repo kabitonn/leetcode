@@ -52,6 +52,9 @@ Output: false
 
 $$n = 3^i $$
 $$ i = log_{3}(n) = \cfrac{log_b(n)}{log_b(3)}$$
+
+通过取小数部分（利用 % 1）来检查数字是否是整数，并检查它是否是 0。
+
 ```java
 	public boolean isPowerOfThree1(int n) {
 		//double r = Math.log10(n)/Math.log10(3);
@@ -64,5 +67,21 @@ $$ i = log_{3}(n) = \cfrac{log_b(n)}{log_b(3)}$$
 
 
 ### 3.3 整数限制
+
+Integer.MAX_VALUE (2147483647)
+知道了 n 的限制，我们现在可以推断出 n 的最大值，也就是 3 的幂，是 1162261467。我们计算如下：
+
+$$3^{\lfloor{}\log_3{MaxInt}\rfloor{}} = 3^{\lfloor{}19.56\rfloor{}} = 3^{19} = 1162261467$$
+
+因此我们返回true的n的可能值是$$3^0,3^1,\cdots 3^{19}$$,因为3是质数，所以3^19的除数只有$$3^0,3^1,\cdots 3^{19}$$,因此我们只需要将$$3^{19}$$除以n,若余数为0意味着 n 是 $$3^{19}$$的除数，因此是 3 的幂
+
+
+```java 
+	public boolean isPowerOfThree1(int n) {
+		return n > 0 && Math.pow(3, 19) % n == 0;
+	}
+
+```
+
 
 
