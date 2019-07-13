@@ -74,7 +74,7 @@ Could you do it in O(n) time and O(1) space?
             fast = fast.next.next;
             slow = slow.next;
         }
-        ListNode mid = slow;
+        ListNode mid = slow;//mid为中间或中间偏左
         mid.next = reverseList(mid.next);
         ListNode left = head,right = mid.next;
         while(right!=null) {
@@ -109,7 +109,7 @@ Could you do it in O(n) time and O(1) space?
             prev = slow;
             slow = next;
         }
-        ListNode left = prev;
+        ListNode left = prev;//prev为中间偏左，slow为中间或中间偏右
         ListNode right = fast==null?slow:slow.next;
 
         while (right != null) {
