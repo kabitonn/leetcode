@@ -32,10 +32,27 @@ Explanation: 14 is not ugly since it includes another prime factor 7.
 
 ## 2. 思路
 
+不断将5,3,2的因子除掉
+
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 暴力法
 
 
-### 3.2
+```java
+    public boolean isUgly(int num) {
+    	if(num<=0) {return false;}
+    	while(num%5==0) {
+    		num/=5;
+    	}
+    	while(num%3==0) {
+    		num/=3;
+    	}
+    	while(num%2==0) {
+    		num/=2;
+    	}
+        return num==1;
+    }
+```
+
 

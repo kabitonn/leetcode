@@ -20,10 +20,55 @@ Output: 8
 
 ## 2. 思路
 
+
+
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 排序
 
 
-### 3.2
+```java
+    public int missingNumber(int[] nums) {
+        Arrays.sort(nums);
+        int i=0;
+        for(;i<nums.length;i++) {
+        	if(nums[i]!=i) {
+        		break;
+        	}
+        }
+        return i;
+    }
+```
+
+
+
+### 3.2 求总合
+
+
+```java
+    public int missingNumber(int[] nums) {
+        int sum = 0;
+        for(int n:nums) {
+        	sum+=n;
+        }
+        return (nums.length+1)*nums.length/2-sum;
+    }
+```
+
+
+### 3.3 索引和值异或运算
+
+missing为缺少的值的索引
+
+```java
+    public int missingNumber2(int[] nums) {
+        int missing = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            missing ^= i ^ nums[i];
+        }
+        return missing;
+    }
+```
+
+
 

@@ -40,18 +40,17 @@ Could you do it without any loop/recursion in O(1) runtime?
 
 
 ### 3.2 规律
+假设一个三位数整数$$n=100*a+10*b+c$$,变化后$$add(n)=a+b+c$$； 两者的差值$$n-add(n)=99a+9b$$，差值可以被9整除，说明每次缩小9的倍数 那么我们可以对res=num%9，若不为0则返回res，为0则返回9
 
 
 ```java
-	public int addDigits(int num) {
-		if(num>9)
-		{
-			num=num%9;
-			if(num==0)
-				return 9;
-		}
-		return num;
-	}
+    public int addDigits1(int num) {
+        if (num == 0) {
+            return 0;
+        }
+        num %= 9;
+        return num == 0 ? 9 : num;
+    }
 ```
 
 
