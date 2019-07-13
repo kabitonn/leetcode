@@ -82,6 +82,7 @@ public class MyQueue {
 ```
 
 * 入队push
+
 ```java
     public void push(int x) {
             stack1.push(x);
@@ -92,6 +93,7 @@ public class MyQueue {
 空间复杂度：$$O(1)$$
 
 * 出队pop
+
 ```java
     public int pop() {
         if(stack2.isEmpty()) {
@@ -118,9 +120,8 @@ public class MyQueue {
         return stack2.peek();
     }
 ```
-
-  时间复杂度：$$O(n)$$  
-  空间复杂度：$$O(1)$$
+时间复杂度：$$O(n)$$  
+空间复杂度：$$O(1)$$
 
 * 判空empty
 
