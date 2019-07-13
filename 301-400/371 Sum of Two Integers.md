@@ -22,9 +22,24 @@ Output: 1
 
 ## 3. 解决方法
 
-### 3.1
+### 3.1 位运算
 
-### 3.2
+a ^ b 无进位的相加  
+\(a & b\) 每一位的进位
+
+```java
+    public int getSum(int a, int b) {
+        while(b != 0){
+            int sum = a ^ b;    //按位加但不进位
+            int carry = (a & b) << 1;   //按位与表示进位
+            a = sum;
+            b = carry;
+        }
+        return a;
+    }
+```
+
+### 
 
 
 
