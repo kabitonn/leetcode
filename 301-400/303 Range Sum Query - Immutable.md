@@ -46,24 +46,16 @@ public class NumArray {
 
 ```java
 public class NumArray {
-	private int[] sums;
-	public NumArray(int[] nums) {
-		this.sums = new int[nums.length+1];
-		for(int i=0;i<nums.length;i++) {
-			sums[i+1] = sums[i]+nums[i];
-		}
-	}
-	public int sumRange(int i, int j) {
-		return sums[j+1]-sums[i];
-	}
-    
-    /*public int sumRange(int i, int j) {
-    	int sum = 0;
-        for(;i<=j&&i<nums.length;i++) {
-        	sum+=nums[i];
+    private int[] sums;
+    public NumArray(int[] nums) {
+        this.sums = new int[nums.length+1];
+        for(int i=0;i<nums.length;i++) {
+            sums[i+1] = sums[i]+nums[i];
         }
-        return sum;
-    }*/
+    }
+    public int sumRange(int i, int j) {
+        return sums[j+1]-sums[i];
+    }
 }
 ```
 
