@@ -28,7 +28,55 @@ Explanation:
 ### 3.1 哈希表
 
 
+```java
+    public char findTheDifference(String s, String t) {
+        int[] map = new int[26];
+        for(char c:s.toCharArray()) {
+        	map[c-'a']++;
+        }
+        for(char c:t.toCharArray()) {
+        	if(--map[c-'a']<0) {
+        		return c;
+        	}
+        }
+        return ' ';
+    }
+```
+
+
+
 ### 3.2 求和
 
+
+```java
+    public char findTheDifference(String s, String t) {
+        int sum = 0;
+    	for(char c:t.toCharArray()) {
+        	sum+=c;
+        }
+        for(char c:s.toCharArray()) {
+        	sum-=c;
+        }
+        return (char) sum;
+    }
+```
+
+
+
 ### 3.3 异或
+
+
+```java
+    public char findTheDifference(String s, String t) {
+        int sum = 0;
+    	for(char c:t.toCharArray()) {
+        	sum^=c;
+        }
+        for(char c:s.toCharArray()) {
+        	sum^=c;
+        }
+        return (char) sum;
+    }
+```
+
 
