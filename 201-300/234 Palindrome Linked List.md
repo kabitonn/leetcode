@@ -99,7 +99,29 @@ Could you do it in O(n) time and O(1) space?
 
 
 ```java
+    public boolean isPalindrome(ListNode head) {
+        ListNode slow = head, fast = head;
+        ListNode prev = null;
+        while(fast!=null&&fast.next!=null){
+            fast = fast.next.next;
+            ListNode next = slow.next;
+            slow.next = prev;
+            prev = slow;
+            slow = next;
+        }
+        ListNode left = prev;
+        ListNode right = fast==null?slow:slow.next;
 
+        while (right != null) {
+            if (left.val != right.val) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+
+        return true;
+    }
 ```
 
 
