@@ -33,8 +33,49 @@ Return 3. The paths that sum to 8 are:
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 双重递归
+遍历节点作为起始点，计算sum
+
+```java
+    public int pathSum(TreeNode root, int sum) {
+    	if(root==null) {return 0;}
+        return getPathSum(root, sum)+pathSum(root.left,sum)+pathSum(root.right, sum);
+    }
+
+    public int getPathSum( TreeNode pNode, int sum) {
+		if(pNode==null) {return 0;}
+		sum -= pNode.val;
+		return (sum==0?1:0)+getPathSum( pNode.left, sum)+getPathSum( pNode.right, sum);
+	}
+```
 
 
-### 3.2
+
+### 3.2 HashMap缓存
+取DFS加回溯，每次访问到一个节点，把该节点加入到当前的pathSum中
+然后判断是否存在一个之前的前n项和，其值等于pathSum与sum之差
+如果有，就说明现在的前n项和，减去之前的前n项和，等于sum，那么也就是说，这两个点之间的路径和，就是sum
+
+
+```java
+    public int pathSum(TreeNode root, int sum) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        map.put(0, 1);
+        return getPathSum1(root, map, sum, 0);
+    }
+    
+    int getPathSum(TreeNode pNode, HashMap<Integer, Integer> map, int target, int pathSum){
+        int paths = 0;
+        if(pNode == null) return 0;
+        
+        pathSum += pNode.val;
+        paths += map.getOrDefault(pathSum - target, 0);
+        map.put(pathSum, map.getOrDefault(pathSum, 0) + 1);
+        paths = getPathSum1(pNode.left, map, target, pathSum) + getPathSum1(pNode.right, map, target, pathSum) + paths;
+        map.put(pathSum, map.get(pathSum) - 1);
+        return paths;
+    }
+```
+
+
 
