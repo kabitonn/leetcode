@@ -32,7 +32,7 @@ Output: false
 
 ## 3. 解决方法
 
-### 3.1 暴力法
+### 3.1 暴力法 循环迭代
 
 
 ```java
@@ -56,7 +56,7 @@ $$ i = log_{3}(n) = \cfrac{log_b(n)}{log_b(3)}$$
 通过取小数部分（利用 % 1）来检查数字是否是整数，并检查它是否是 0。
 
 ```java
-	public boolean isPowerOfThree1(int n) {
+	public boolean isPowerOfThree(int n) {
 		//double r = Math.log10(n)/Math.log10(3);
 		//return r==(int)r;
 		return (Math.log10(n) / Math.log10(3)) % 1 == 0;
@@ -77,7 +77,7 @@ $$3^{\lfloor{}\log_3{MaxInt}\rfloor{}} = 3^{\lfloor{}19.56\rfloor{}} = 3^{19} = 
 
 
 ```java 
-	public boolean isPowerOfThree1(int n) {
+	public boolean isPowerOfThree(int n) {
 		return n > 0 && Math.pow(3, 19) % n == 0;
 	}
 
