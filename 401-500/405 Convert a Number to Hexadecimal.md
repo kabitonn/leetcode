@@ -30,10 +30,40 @@ Output:
 
 
 ## 2. 思路
-
+10进制转16进制
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 无符号右移4位 位与运算
+
+```java
+    public String toHex(int num) {
+    	if(num==0) {return "0";}
+    	char[] map = new char[] {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+        StringBuilder sb =  new StringBuilder();
+    	while(num!=0) {
+        	int last = num&15;
+        	sb.append(map[last]);
+        	num>>>=4;
+        }
+    	return sb.reverse().toString();
+    }
+```
+
+
+```java
+    public String toHex(int num) {
+    	if(num==0) {return "0";}
+    	char[] map = new char[] {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+        String string = "";
+    	while(num!=0) {
+    		string = map[(num&0xf)]+string;
+        	num>>>=4;
+        }
+    	return string;
+    }
+```
+
+
 
 
 ### 3.2
