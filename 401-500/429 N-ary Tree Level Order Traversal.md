@@ -31,7 +31,7 @@ We should return its level order traversal:
 
 ### 3.1 迭代
 
-
+队列实现层次遍历BFS
 ```java
 	public List<List<Integer>> levelOrder(Node root) {
 		Deque<Node> queue = new LinkedList<>();
@@ -60,7 +60,7 @@ We should return its level order traversal:
 
 
 ```java
-	public List<List<Integer>> levelOrder1(Node root) {
+	public List<List<Integer>> levelOrder(Node root) {
 		List<List<Integer>> lists = new ArrayList<>();
 		if(root==null) {return lists;}
 		getLists(lists,0,root);
