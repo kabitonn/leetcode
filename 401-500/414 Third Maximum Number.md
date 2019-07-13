@@ -113,5 +113,28 @@ Explanation: Note that the third maximum here means the third maximum distinct n
 ```
 
 
+```java
+	public int thirdMax(int[] nums) {
+		Integer maxFirst = null;
+		Integer maxSecond = null;
+		Integer maxThird = null;
+		for(int num:nums){
+			if(maxFirst==null||num>maxFirst){
+				maxThird=maxSecond;
+				maxSecond=maxFirst;
+				maxFirst=num;
+			}else if(num<maxFirst&&(maxSecond==null||num>maxSecond)){
+				maxThird=maxSecond;
+				maxSecond=num;
+			}else if(num<maxFirst&&num<maxSecond&&(maxThird==null||num>maxThird)){
+				maxThird=num;
+			}
+		}
+		return (maxThird==null)?maxFirst:maxThird;
+	}
+```
+
+
+
 
 

@@ -17,7 +17,51 @@ Given two non-negative integers num1 and num2 represented as string, return the 
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 双指针
+
+
+```java
+    public String addStrings(String num1, String num2) {
+    	String str = "";
+    	int carry = 0;
+    	int i=0,len1=num1.length(),len2=num2.length();
+    	while(carry!=0||i<len1||i<len2) {
+    		int a = 0,b = 0;
+    		if(i<len1) {
+    			a = num1.charAt(len1-1-i)-'0';
+    		}
+    		if(i<len2) {
+    			b = num2.charAt(len2-1-i)-'0';
+    		}
+    		int sum = a+b+carry;
+    		carry = sum/10;
+    		str = sum%10+str;
+    		i++;
+    	}
+    	
+        return str;
+    }
+```
+
+### 3.2 双指针
+
+```java
+    public String addStrings(String num1, String num2) {
+        StringBuilder res = new StringBuilder("");
+        int i = num1.length() - 1, j = num2.length() - 1, carry = 0;
+        while(i >= 0 || j >= 0||carry!=0){
+            int n1 = i >= 0 ? num1.charAt(i) - '0' : 0;
+            int n2 = j >= 0 ? num2.charAt(j) - '0' : 0;
+            int tmp = n1 + n2 + carry;
+            carry = tmp / 10;
+            res.append(tmp % 10);
+            i--; j--;
+        }
+        return res.reverse().toString();
+    }
+```
+
+
 
 
 ### 3.2
