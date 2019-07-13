@@ -47,6 +47,7 @@ Output: false
 	}
 ```
 ### 3.2 二分求左边界
+
 求出小于等于算术平方根的最大值，判断其平方
 
 ```java
@@ -66,6 +67,13 @@ Output: false
         }
         return left * left == num;
     }
+```
+
+### 3.3 牛顿迭代法
+
+
+```java
+
 ```
 
 
