@@ -65,47 +65,33 @@ Notice each digit has it's own entry in the array.
 
 
 ```java
-    public int compress(char[] chars) {
-        int len=chars.length;
-        int count=1;
-        int index = 0;
-        int i=0;
-        for(;i<len;i++) {
-        	if(i==0) {continue;}
-        	if(chars[i]==chars[i-1]) {count++;}
-        	else if(chars[i]!=chars[i-1]) {
-        		chars[index++] = chars[i-1];
-        		if(count!=1) {
-        			String strCount = Integer.toString(count);
-        			for(int j=0;j<strCount.length();j++) {
-        				chars[index++] = strCount.charAt(j);
-        			}
-        		}
-        		count = 1;
-        	}
-        	/*
-        	if(i+1<len&&chars[i]==chars[i+1]) {count++;}
-        	else if(i+1<len&&chars[i]!=chars[i+1]) {
-        		chars[index++] = chars[i];
-        		if(count!=1) {
-        			String strCount = Integer.toString(count);
-        			for(int j=0;j<strCount.length();j++) {
-        				chars[index++] = strCount.charAt(j);
-        			}
-        		}
-        		count = 1;
-        	}
-        	*/
-        }
-        chars[index++] = chars[len-1];
-        if(count!=1) {
+	public int compress0(char[] chars) {
+		int len=chars.length;
+		int count=1;
+		int index = 0;
+		int i=0;
+		for(;i<len;i++) {
+			if(i+1<len&&chars[i]==chars[i+1]) {count++;}
+			else if(i+1<len&&chars[i]!=chars[i+1]) {
+				chars[index++] = chars[i];
+				if(count!=1) {
+					String strCount = Integer.toString(count);
+					for(int j=0;j<strCount.length();j++) {
+						chars[index++] = strCount.charAt(j);
+					}
+				}
+				count = 1;
+			}
+		}
+		chars[index++] = chars[len-1];
+		if(count!=1) {
 			String strCount = Integer.toString(count);
 			for(int j=0;j<strCount.length();j++) {
 				chars[index++] = strCount.charAt(j);
 			}
 		}
-        return index;
-    }
+		return index;
+	}
 ```
 
 
