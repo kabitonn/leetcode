@@ -72,9 +72,7 @@ public class MyStack {
 }
 ```
 
-入栈push
-
-
+- 入栈push
 ```java
     public void push(int x) {
         queue.offer(x);
@@ -85,8 +83,40 @@ public class MyStack {
     }
 ```
 时间复杂度：$$O(n)$$算法会让 q1 出队 n 个元素，同时入队 $$n + 1$$ 个元素到 q2。这个过程会产生 $$2n + 1$$ 步操作，同时链表中 插入 操作和 移除 操作的时间复杂度为$$O(1)$$，因此时间复杂度为 $$O(n)$$。
-
 空间复杂度：$$O(1)$$
+
+- 出栈
+```java
+public int pop() {
+return queue.poll();
+}
+```
+时间复杂度：$$O(1)$$
+空间复杂度：$$O(1)$$
+
+- 取栈顶元素
+```java
+public int top() {
+return queue.peek();
+}
+```
+时间复杂度：$$O(1)$$
+空间复杂度：$$O(1)$$
+
+- 判空
+```java
+    public boolean empty() {
+        return queue.isEmpty();
+    }
+```
+时间复杂度：$$O(1)$$
+空间复杂度：$$O(1)$$
+
+
+
+
+
+
 
 
 
