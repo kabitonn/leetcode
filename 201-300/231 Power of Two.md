@@ -25,14 +25,31 @@ Output: false
 
 ## 3. 解决方法
 
-### 3.1 
-
+### 3.1 遍历每一位
+遍历每一位只有最高位为1
 
 ```java
-
+    public boolean isPowerOfTwo(int n) {
+    	if(n<=0) {return false;}
+    	while(n!=1) {
+    		if((n&1)==1) {return false;}
+    		n>>=1;
+    	}
+        return true;
+    }
 ```
 
 
 
-### 3.2
+### 3.2 最低位即最高位的1
+
+n&(n-1)可将最低位的1变为0，二次幂的最高位为1，其余为0
+
+```java
+    public boolean isPowerOfTwo1(int n) {
+        return n>0&&(n&(n-1))==0;
+    }
+```
+
+
 
