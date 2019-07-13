@@ -44,6 +44,12 @@ public class NumArray {
 
 ### 3.2 动态规划+缓存
 
+
+$$sums[k]$$ 定义为 $$nums[0 \cdots k-1]$$的累积和
+
+$$sumrange（i，j）=sums[j+1]−sums[i]$$
+
+
 ```java
 public class NumArray {
     private int[] sums;
