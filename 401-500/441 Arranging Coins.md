@@ -40,5 +40,17 @@ Because the 4th row is incomplete, we return 3.
 ### 3.1 
 
 
+```java
+    public int arrangeCoins(int n) {
+    	int stage = 1;
+        while(n>=stage) {
+        	n-=stage++;
+        }
+        return stage-1;
+    }
+```
+
+
+
 ### 3.2
 

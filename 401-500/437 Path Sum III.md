@@ -51,7 +51,8 @@ Return 3. The paths that sum to 8 are:
 
 
 
-### 3.2 HashMap缓存
+### 3.2 HashMap缓存 回溯
+
 取DFS加回溯，每次访问到一个节点，把该节点加入到当前的pathSum中
 然后判断是否存在一个之前的前n项和，其值等于pathSum与sum之差
 如果有，就说明现在的前n项和，减去之前的前n项和，等于sum，那么也就是说，这两个点之间的路径和，就是sum
@@ -71,7 +72,7 @@ Return 3. The paths that sum to 8 are:
         pathSum += pNode.val;
         paths += map.getOrDefault(pathSum - target, 0);
         map.put(pathSum, map.getOrDefault(pathSum, 0) + 1);
-        paths = getPathSum1(pNode.left, map, target, pathSum) + getPathSum1(pNode.right, map, target, pathSum) + paths;
+        paths = getPathSum(pNode.left, map, target, pathSum) + getPathSum(pNode.right, map, target, pathSum) + paths;
         map.put(pathSum, map.get(pathSum) - 1);
         return paths;
     }
