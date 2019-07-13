@@ -102,7 +102,9 @@ public class MyQueue {
         return stack2.pop();
     }
 ```
- 
+时间复杂度：$$O(n)$$
+空间复杂度：$$O(1)$$
+
 
 * 队首元素peek
 ```java
@@ -115,6 +117,8 @@ public class MyQueue {
         return stack2.peek();
     }
 ```
+时间复杂度：$$O(n)$$
+空间复杂度：$$O(1)$$
 
 * 判空empty
 ```java
