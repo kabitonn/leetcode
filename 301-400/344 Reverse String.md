@@ -25,8 +25,36 @@ Output: ["h","a","n","n","a","H"]
 
 ## 3. 解决方法
 
-### 3.1 
+### 3.1 双指针 交换位置
 
 
-### 3.2
+```java
+    public void reverseString(char[] s) {
+        int i = 0, j = s.length - 1;
+        while(i < j) {
+            char tmp = s[i];
+            s[i++] = s[j];
+            s[j--] = tmp;
+        }
+    }
+```
+
+
+
+### 3.2 双指针 异或交换
+
+
+```java
+    public void reverseString(char[] s) {
+        int i = 0, j = s.length - 1;
+        while(i < j) {
+            s[i] ^= s[j];
+            s[j] ^= s[i];
+            s[i] ^= s[j];
+            i++;j--;
+        }
+    }
+```
+
+
 
