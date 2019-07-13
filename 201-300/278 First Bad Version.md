@@ -58,6 +58,8 @@ Then 4 is the first bad version.
         return n;
     }
 ```
+时间复杂度：$$O(n)$$。在最坏的情况下，最多可能会调用 isBadVersion $$n-1$$ 次，因此总的时间复杂度为 $$O(n)$$。
+空间复杂度：$$O(1)$$。
 
 
 
