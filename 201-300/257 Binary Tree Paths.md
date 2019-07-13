@@ -135,6 +135,40 @@ public List<String> binaryTreePaths(TreeNode root) {
         return paths;
     }
 ```
+
+
+
+```java
+    public List<String> binaryTreePaths(TreeNode root) {
+        LinkedList<String> paths = new LinkedList<>();
+        if (root == null)
+            return paths;
+        LinkedList<TreeNode> node_stack = new LinkedList<>();
+        LinkedList<String> path_stack = new LinkedList<>();
+        node_stack.add(root);
+        path_stack.add("");
+        TreeNode node;
+        String path = null;
+        while (!node_stack.isEmpty()) {
+            node = node_stack.pollLast();
+            path = path_stack.pollLast();
+            path += node.val;
+            if ((node.left == null) && (node.right == null))
+                paths.add(path);
+            if (node.left != null) {
+                node_stack.add(node.left);
+                path_stack.add(path + "->");
+            }
+            if (node.right != null) {
+                node_stack.add(node.right);
+                path_stack.add(path + "->");
+            }
+        }
+        return paths;
+    }
+```
+
+
 时间复杂度：$$O(N)$$，每个节点只会被访问一次。
 空间复杂度：$$O(N)$$，在最坏情况下，队列中有 N 个节点。
 
