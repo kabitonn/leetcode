@@ -52,9 +52,9 @@ Because the 4th row is incomplete, we return 3.
 
 
 
-### 3.2 二分法求左边界
+### 3.2 二分法
 
-
+求小于等于符合要求的最大值
 ```java
     public int arrangeCoins(int n) {
     	int low = 1;
@@ -70,6 +70,15 @@ Because the 4th row is incomplete, we return 3.
     	return low;
     }
 ```
+### 3.3 公式法
+
+
+```java
+    public int arrangeCoins(int n) {
+        return (int) ((-1 + Math.sqrt(1 + 8 * (long) n)) / 2);
+    }
+```
+
 
 
 
