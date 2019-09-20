@@ -198,39 +198,39 @@ Output: [-1,-1]
 
 1. 为什么 while\(left &lt; right\) 而不是 &lt;= ?
 
-答：用相同的方法分析，因为 right = nums.length 而不是 nums.length - 1。因此每次循环的「搜索区间」是 \[left, right\) 左闭右开。
+    答：用相同的方法分析，因为 right = nums.length 而不是 nums.length - 1。因此每次循环的「搜索区间」是 \[left, right\) 左闭右开。
 
-while\(left &lt; right\)终止的条件是 left == right，此时搜索区间 \[left, left\) 为空，所以可以正确终止。
+    while\(left &lt; right\)终止的条件是 left == right，此时搜索区间 \[left, left\) 为空，所以可以正确终止。
 
-1. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
+2. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
 
-```java
-    while (left < right) {
-        //...
-    }
-    // target 比所有数都大
-    if (left == nums.length) return -1;
-    // 类似之前算法的处理方式
-    return nums[left] == target ? left : -1;
-```
+    ```java
+        while (left < right) {
+            //...
+        }
+        // target 比所有数都大
+        if (left == nums.length) return -1;
+        // 类似之前算法的处理方式
+        return nums[left] == target ? left : -1;
+    ```
 
-1. 为什么 left = mid + 1，right = mid ？和之前的算法不一样？
+3. 为什么 left = mid + 1，right = mid ？和之前的算法不一样？
 
-答：这个很好解释，因为我们的「搜索区间」是 \(left, right\) 左闭右开，所以当 nums\[mid\] 被检测之后，下一步的搜索区间应该去掉 mid 分割成两个区间，即 \[left, mid\) 或 \[mid + 1, right\)。  
+    答：这个很好解释，因为我们的「搜索区间」是 \(left, right\) 左闭右开，所以当 nums\[mid\] 被检测之后，下一步的搜索区间应该去掉 mid 分割成两个区间，即 \[left, mid\) 或 \[mid + 1, right\)。  
 4. 为什么该算法能够搜索左侧边界？
 
-答：关键在于对于 nums\[mid\] == target 这种情况的处理：
+    答：关键在于对于 nums\[mid\] == target 这种情况的处理：
 
-```java
-    if (nums[mid] == target){
-        right = mid;
-    }
-```
+    ```java
+        if (nums[mid] == target){
+            right = mid;
+        }
+    ```
 
-可见，找到 target 时不要立即返回，而是缩小「搜索区间」的上界 right，在区间 \(left, mid\)中继续搜索，即不断向左收缩，达到锁定左侧边界的目的  
+    可见，找到 target 时不要立即返回，而是缩小「搜索区间」的上界 right，在区间 \(left, mid\)中继续搜索，即不断向左收缩，达到锁定左侧边界的目的  
 5. 为什么返回 left 而不是 right？
 
-答：都是一样的，因为 while 终止的条件是 left == right。
+    答：都是一样的，因为 while 终止的条件是 left == right。
 
 ### 4.3 寻找右侧边界的二分查找
 
