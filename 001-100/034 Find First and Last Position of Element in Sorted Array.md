@@ -250,24 +250,24 @@ Output: [-1,-1]
 
 1. 为什么这个算法能够找到右侧边界？
 
-答：类似地，关键点还是这里：
+    答：类似地，关键点还是这里：
 
-```java
-    if (nums[mid] == target) {
-        left = mid + 1;
-    }
-```
+    ```java
+        if (nums[mid] == target) {
+            left = mid + 1;
+        }
+    ```
 
 1. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
 
-```java
-    while (left < right) {
-        // ...
-    }
-    // target 比所有数都小
-    if (left == 0) return -1;
-    return nums[left-1] == target ? (left-1) : -1;
-```
+    ```java
+        while (left < right) {
+            // ...
+        }
+        // target 比所有数都小
+        if (left == 0) return -1;
+        return nums[left-1] == target ? (left-1) : -1;
+    ```
 
 
 
