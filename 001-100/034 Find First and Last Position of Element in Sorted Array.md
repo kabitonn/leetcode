@@ -258,7 +258,7 @@ while\(left &lt; right\)终止的条件是 left == right，此时搜索区间 \[
     }
 ```
 
-1. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
+2. 返回 -1 的操作？如果 nums 中不存在 target 这个值，怎么办？
 
 ```java
     while (left < right) {
