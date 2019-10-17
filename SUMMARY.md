@@ -36,6 +36,7 @@
   * [034. Find First and Last Position of Element in Sorted Array\(M\)](/001-100/034 Find First and Last Position of Element in Sorted Array.md)
   * [035. Search Insert Position\(E\)](/001-100/035 Search Insert Position.md)
   * [036. Valid Sudoku(M)](/001-100/036 Valid Sudoku.md)
+  * [037. Sudoku Solver(M)](/001-100/037 Sudoku Solver.md)
   * [038. Count and Say()](/001-100/038 Count and Say.md)
   * [039. ()](/001-100/0.md)
   * [040. ()](/001-100/0.md)
