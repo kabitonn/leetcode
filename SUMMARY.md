@@ -38,7 +38,7 @@
   * [036. Valid Sudoku(M)](/001-100/036 Valid Sudoku.md)
   * [037. Sudoku Solver(M)](/001-100/037 Sudoku Solver.md)
   * [038. Count and Say(E)](/001-100/038 Count and Say.md)
-  * [039. Combination Sum(M)](/001-100/0.md)
+  * [039. Combination Sum(M)](/001-100/039 Combination Sum.md)
   * [040. ()](/001-100/0.md)
   * [041. ()](/001-100/0.md)
   * [042. ()](/001-100/0.md)
