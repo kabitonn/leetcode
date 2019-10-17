@@ -43,7 +43,7 @@
   * [041. First Missing Positive(H)](/001-100/041 First Missing Positive.md)
   * [042. Trapping Rain Water(H)](/001-100/042 Trapping Rain Water.md)
   * [043. Multiply Strings(M)](/001-100/043 Multiply Strings.md)
-  * [046. ()](/001-100/0.md)
+  * [046. Permutations(M)](/001-100/046 Permutations.md)
 
   * [053. Maximum Subarray\(E\)](/001-100/053 Maximum Subarray.md)
   * [058. Length of Last Word\(E\)](/001-100/058 Length of Last Word.md)
