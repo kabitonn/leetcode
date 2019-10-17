@@ -50,8 +50,11 @@
   * [050. Pow(x,n)(M)](/001-100/050 Pow x n.md)
   * [051. N-Queens(H)](/001-100/051 N-Queens.md)
   * [052. N-Queens II(H)](/001-100/052 N-Queens II.md)
-
   * [053. Maximum Subarray\(E\)](/001-100/053 Maximum Subarray.md)
+  * [054. Spiral Matrix\(M\)](/001-100/054 Spiral Matrix.md)
+  * [055. Jump Game\(M\)](/001-100/055 Jump Game.md)
+  * [056. Maximum Subarray\(M\)](/001-100/056 Maximum Subarray.md)
+  * [057. Maximum Subarray\(H\)](/001-100/057 Maximum Subarray.md)
   * [058. Length of Last Word\(E\)](/001-100/058 Length of Last Word.md)
   * [066. Plus One\(E\)](/001-100/066 Plus One.md)
   * [067. Add Binary\(E\)](/001-100/067 Add Binary.md)
