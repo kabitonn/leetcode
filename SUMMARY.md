@@ -211,7 +211,7 @@
   * [205. Isomorphic Strings(E)](/201-300/205 Isomorphic Strings.md)
   * [206. Reverse Linked List(E)](/201-300/206 Reverse Linked List.md)
   * [207. Course Schedule(M)](/201-300/207 Course Schedule.md)
-  * [208. Implement Trie (Prefix Tree)(M)](/201-300/208 Implement Trie (Prefix Tree).md)
+  * [208. Implement Trie (Prefix Tree)(M)](/201-300/208 Implement Trie Prefix Tree.md)
   * [209. Minimum Size Subarray Sum(M)](/201-300/209 Minimum Size Subarray Sum.md)
   * [210. Course Schedule II(M)](/201-300/210 Course Schedule II.md)
   * [211. Add and Search Word - Data structure design(M)](/201-300/211 Add and Search Word - Data structure design.md)
