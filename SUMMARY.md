@@ -35,6 +35,7 @@
   * [033. Search in Rotated Sorted Array\(M\)](/001-100/033 Search in Rotated Sorted Array.md)
   * [034. Find First and Last Position of Element in Sorted Array\(M\)](/001-100/034 Find First and Last Position of Element in Sorted Array.md)
   * [035. Search Insert Position\(E\)](/001-100/035 Search Insert Position.md)
+  * [036. Valid Sudoku(M)](/001-100/036 Valid Sudoku.md)
   * [053. Maximum Subarray\(E\)](/001-100/053 Maximum Subarray.md)
   * [058. Length of Last Word\(E\)](/001-100/058 Length of Last Word.md)
   * [066. Plus One\(E\)](/001-100/066 Plus One.md)
