@@ -57,7 +57,7 @@
   * [057. Insert Interval\(H\)](/001-100/057 Insert Interval.md)
   * [058. Length of Last Word\(E\)](/001-100/058 Length of Last Word.md)
   * [059. Spiral Matrix II\(M\)](/001-100/059 Spiral Matrix II.md)
-  * [060. Plus One\(E\)](/001-100/060 Plus One.md)
+  * [060. Permutation Sequence\(E\)](/001-100/060 Plus One.md)
   * [061. Plus One\(E\)](/001-100/061 Plus One.md)
   * [062. Plus One\(E\)](/001-100/062 Plus One.md)
   * [063. Plus One\(E\)](/001-100/063 Plus One.md)
