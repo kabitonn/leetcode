@@ -45,6 +45,11 @@
   * [043. Multiply Strings(M)](/001-100/043 Multiply Strings.md)
   * [046. Permutations(M)](/001-100/046 Permutations.md)
   * [047. Permutations II(M)](/001-100/047 Permutations II.md)
+  * [048. Rotate Image(M)](/001-100/048 Rotate Image.md)
+  * [049. Group Anagrams(M)](/001-100/049 Group Anagrams.md)
+  * [050. Pow(x,n)(M)](/001-100/050 Pow(x,n).md)
+
+
   * [053. Maximum Subarray\(E\)](/001-100/053 Maximum Subarray.md)
   * [058. Length of Last Word\(E\)](/001-100/058 Length of Last Word.md)
   * [066. Plus One\(E\)](/001-100/066 Plus One.md)
