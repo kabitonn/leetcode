@@ -48,7 +48,8 @@
   * [048. Rotate Image(M)](/001-100/048 Rotate Image.md)
   * [049. Group Anagrams(M)](/001-100/049 Group Anagrams.md)
   * [050. Pow(x,n)(M)](/001-100/050 Pow x n.md)
-  * [051. (M)](/001-100/050 Pow x n.md)
+  * [051. N-Queens(H)](/001-100/051 N-Queens.md)
+  * [052. N-Queens II(H)](/001-100/052 N-Queens II.md)
 
   * [053. Maximum Subarray\(E\)](/001-100/053 Maximum Subarray.md)
   * [058. Length of Last Word\(E\)](/001-100/058 Length of Last Word.md)
