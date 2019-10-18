@@ -1,3 +1,10 @@
 {
-
+    "plugins": [
+        "disqus"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "gitbookuse"
+        }
+    }
 }
