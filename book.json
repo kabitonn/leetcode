@@ -3,10 +3,15 @@
         "disqus",
         "-search",
         "search-pro",
+        "prism",
+        "-highlight",
         "github",
         "emphasize",
         "splitter",
-        "include-codeblock"
+        "include-codeblock",
+        "expandable-chapters-small",
+        "copy-code-button",
+        "simple-page-toc"
     ],
     "pluginsConfig": {
         "disqus": {
@@ -20,6 +25,10 @@
         },
         "github": {
             "url": "https://github.com/kabitonn"
+        },
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
         }
     }
 }
